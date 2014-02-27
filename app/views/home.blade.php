@@ -36,9 +36,11 @@ for ($i = 0; $i <= 14; $i++) {
 					<div data-alert class='alert-box "; 
 					// Insert Tag Here
 					findBusynessTag('Robarts Library', $i, 0);
-					echo" radius'><small>";
+					echo" radius'><div class='show-for-medium-up'>";
 				findBusyness('Robarts Library', $i, 0);	 
-			echo"</small></div>
+			echo"</div><div class='show-for-small'><small>";
+				//findBusyness('Robarts Library', $i, 0);
+			echo"</small></div></div>
 			
 					</h5>
 				</div>
