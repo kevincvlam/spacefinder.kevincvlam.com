@@ -2,3 +2,10 @@
 [27-Feb-2014 03:45:00 UTC] PHP Fatal error:  Call to undefined function findBusynessTag() in /home7/kevincvl/public_html/spacefinder/app/storage/views/31bf540faece5de485e11181a0c0fa00 on line 37
 [27-Feb-2014 03:45:12 UTC] PHP Fatal error:  Call to undefined function findBusynessTag() in /home7/kevincvl/public_html/spacefinder/app/storage/views/31bf540faece5de485e11181a0c0fa00 on line 37
 [27-Feb-2014 03:46:06 UTC] PHP Fatal error:  Call to undefined function findBusynessTag() in /home7/kevincvl/public_html/spacefinder/app/storage/views/31bf540faece5de485e11181a0c0fa00 on line 37
+[27-Feb-2014 04:25:39 UTC] PHP Parse error:  syntax error, unexpected 'in' (T_STRING) in /home7/kevincvl/public_html/spacefinder/app/storage/views/48b8384640e7ec5d8659c944371b1448 on line 7
+[27-Feb-2014 04:26:14 UTC] PHP Parse error:  syntax error, unexpected 'in' (T_STRING) in /home7/kevincvl/public_html/spacefinder/app/storage/views/48b8384640e7ec5d8659c944371b1448 on line 7
+[27-Feb-2014 04:26:55 UTC] PHP Parse error:  syntax error, unexpected 'in' (T_STRING) in /home7/kevincvl/public_html/spacefinder/app/storage/views/48b8384640e7ec5d8659c944371b1448 on line 7
+[27-Feb-2014 04:27:26 UTC] PHP Parse error:  syntax error, unexpected 'in' (T_STRING) in /home7/kevincvl/public_html/spacefinder/app/storage/views/48b8384640e7ec5d8659c944371b1448 on line 7
+[27-Feb-2014 04:27:49 UTC] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /home7/kevincvl/public_html/spacefinder/app/storage/views/48b8384640e7ec5d8659c944371b1448 on line 11
+[27-Feb-2014 04:34:06 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home7/kevincvl/public_html/spacefinder/vendor/laravel/framework/src/Illuminate/Support/Str.php on line 320
+[27-Feb-2014 04:36:03 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home7/kevincvl/public_html/spacefinder/app/storage/views/48b8384640e7ec5d8659c944371b1448 on line 8
