@@ -20,15 +20,8 @@ Route::get('/', function()
 Route::get('buildings', function()
 {
     $buildings = buildings::all();
-
-    return View::make('buildings')->with('buildings', $buildings);
-});
-
-Route::get('populations', function()
-{
     $populations = populations::all();
-
-    return View::make('populations')->with('populations', $populations);
+    return View::make('buildings')->with('buildings', $buildings, 'populations', $populations);
 });
 
 Route::get('test', function()
