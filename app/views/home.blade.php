@@ -30,7 +30,7 @@ for ($i = 0; $i <= 14; $i++) {
 				<div class='small-1 medium-2 large-2 columns' align='right'>
 				</div>
 
-				<div class='small-3 medium-2 large-2 columns' >
+				<div class='small-4 medium-2 large-2 columns' >
 					<h5>
 					
 					<div data-alert class='alert-box "; 
@@ -39,7 +39,7 @@ for ($i = 0; $i <= 14; $i++) {
 					echo" radius'><div class='show-for-medium-up'>";
 				findBusyness('Robarts Library', $i, 0);	 
 			echo"</div><div class='show-for-small'><small>";
-				//findBusyness('Robarts Library', $i, 0);
+				findBusyness('Robarts Library', $i, 0);
 			echo"</small></div></div>
 			
 					</h5>
