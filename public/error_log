@@ -1,0 +1,4 @@
+[27-Feb-2014 03:44:57 UTC] PHP Fatal error:  Call to undefined function findBusynessTag() in /home7/kevincvl/public_html/spacefinder/app/storage/views/31bf540faece5de485e11181a0c0fa00 on line 37
+[27-Feb-2014 03:45:00 UTC] PHP Fatal error:  Call to undefined function findBusynessTag() in /home7/kevincvl/public_html/spacefinder/app/storage/views/31bf540faece5de485e11181a0c0fa00 on line 37
+[27-Feb-2014 03:45:12 UTC] PHP Fatal error:  Call to undefined function findBusynessTag() in /home7/kevincvl/public_html/spacefinder/app/storage/views/31bf540faece5de485e11181a0c0fa00 on line 37
+[27-Feb-2014 03:46:06 UTC] PHP Fatal error:  Call to undefined function findBusynessTag() in /home7/kevincvl/public_html/spacefinder/app/storage/views/31bf540faece5de485e11181a0c0fa00 on line 37

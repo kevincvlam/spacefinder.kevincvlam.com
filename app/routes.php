@@ -13,5 +13,31 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('home');
+	//return View::make('test');
 });
+
+Route::get('buildings', function()
+{
+    $buildings = buildings::all();
+
+    return View::make('buildings')->with('buildings', $buildings);
+});
+
+Route::get('populations', function()
+{
+    $populations = populations::all();
+
+    return View::make('populations')->with('populations', $populations);
+});
+
+Route::get('test', function()
+{
+	return View::make('test');
+});
+
+Route::get('test2', function()
+{
+	return View::make('test2');
+});
+
