@@ -34,7 +34,7 @@ function findBusyness ($building, $floor, $area){
 		   echo "Overcrowded";
 		   return 0;
 	}elseif ($busyness > 90 && $busyness <=100){
-		   echo "Extremely Busy";
+		   echo "Crowded";
 		   return 0;
 	}elseif ($busyness > 60 && $busyness <=90){
 		   echo "Busy";
