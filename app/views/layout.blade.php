@@ -22,7 +22,7 @@
   <div class="inner-wrap">
     <nav class="tab-bar">
       <section class="left-small">
-        <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+       <!-- <a class="left-off-canvas-toggle menu-icon" ><span></span></a>-->
       </section>
 
       <section class="middle tab-bar-section">
@@ -33,7 +33,7 @@
       </section>
 
       </nav>
-
+<!--
     <aside class="left-off-canvas-menu">
       <ul class="off-canvas-list">
         <li><label>Quick Links</label></li>
@@ -42,7 +42,7 @@
     	<li><a href="#">Coffee Shops</a></li>
       </ul>
     </aside>
-
+-->
  
 
 <section class="main-section">
