@@ -33,10 +33,10 @@ function findBusyness ($building, $floor, $area){
 	if ($busyness > 100){
 		   echo "Overcrowded";
 		   return 0;
-	}elseif ($busyness > 70 && $busyness <=100){
+	}elseif ($busyness > 90 && $busyness <=100){
 		   echo "Extremely Busy";
 		   return 0;
-	}elseif ($busyness > 50 && $busyness <=75){
+	}elseif ($busyness > 50 && $busyness <=90){
 		   echo "Busy";
 		   return 0;
 	}elseif ($busyness > 10 && $busyness <=50){
@@ -84,10 +84,10 @@ function findBusynessTag ($building, $floor, $area){
 	if ($busyness > 100){
 		   echo "alert";
 		   return 0;
-	}elseif ($busyness > 70 && $busyness <=100){
+	}elseif ($busyness > 90 && $busyness <=100){
 		   echo "alert";
 		   return 0;
-	}elseif ($busyness > 50 && $busyness <=75){
+	}elseif ($busyness > 50 && $busyness <=90){
 		   echo "warning";
 		   return 0;
 	}elseif ($busyness > 10 && $busyness <=50){

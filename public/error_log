@@ -9,3 +9,6 @@
 [27-Feb-2014 04:27:49 UTC] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /home7/kevincvl/public_html/spacefinder/app/storage/views/48b8384640e7ec5d8659c944371b1448 on line 11
 [27-Feb-2014 04:34:06 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home7/kevincvl/public_html/spacefinder/vendor/laravel/framework/src/Illuminate/Support/Str.php on line 320
 [27-Feb-2014 04:36:03 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home7/kevincvl/public_html/spacefinder/app/storage/views/48b8384640e7ec5d8659c944371b1448 on line 8
+[27-Feb-2014 21:16:16 UTC] PHP Parse error:  syntax error, unexpected '$con' (T_VARIABLE), expecting ',' or ';' in /home7/kevincvl/public_html/spacefinder/app/storage/views/dbbe079a34365ee9663f1d23646985e9 on line 34
+[27-Feb-2014 21:17:08 UTC] PHP Parse error:  syntax error, unexpected '$con' (T_VARIABLE), expecting ',' or ';' in /home7/kevincvl/public_html/spacefinder/app/storage/views/dbbe079a34365ee9663f1d23646985e9 on line 34
+[27-Feb-2014 21:17:10 UTC] PHP Parse error:  syntax error, unexpected '$con' (T_VARIABLE), expecting ',' or ';' in /home7/kevincvl/public_html/spacefinder/app/storage/views/dbbe079a34365ee9663f1d23646985e9 on line 34
