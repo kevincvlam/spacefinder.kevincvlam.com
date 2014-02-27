@@ -21,13 +21,13 @@
 <div class="off-canvas-wrap">
   <div class="inner-wrap">
     <nav class="tab-bar">
-      <section class="left-small">
-       <!-- <a class="left-off-canvas-toggle menu-icon" ><span></span></a>-->
-      </section>
+     <!-- <section class="left-small">
+        <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+      </section> -->
 
       <section class="middle tab-bar-section">
         <h1 style="
-		margin-left:20px;"><a class="title" href="<?php echo asset('/')?>">
+		margin-left:0px;"><a class="title" href="<?php echo asset('/')?>">
         
         SpaceFinder</a></h1>
       </section>
