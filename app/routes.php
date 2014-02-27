@@ -21,7 +21,7 @@ Route::get('buildings', function()
 {
     $buildings = buildings::all();
     $populations = populations::all();
-    return View::make('buildings')->with('buildings', $buildings, 'populations', $populations);
+    return View::make('buildings')->with('buildings', $buildings)->with('populations', $populations);
 });
 
 Route::get('test', function()
