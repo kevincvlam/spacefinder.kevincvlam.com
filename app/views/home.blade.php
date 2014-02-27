@@ -30,7 +30,7 @@ for ($i = 0; $i <= 14; $i++) {
 				<div class='small-1 medium-2 large-2 columns' align='right'>
 				</div>
 
-				<div class='small-4 medium-2 large-2 columns' >
+				<div class='small-5 medium-2 large-2 columns' >
 					<h5>
 					
 					<div data-alert class='alert-box "; 
