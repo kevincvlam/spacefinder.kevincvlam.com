@@ -30,9 +30,9 @@ echo "<tr>
 		<td> " . (string) getMaxPop('Robarts Library',$i,0,$con) . "</td>
 		<td> " . (string) getMinPop('Robarts Library',$i,0,$con) . "</td>
 	  </tr>";
-} echo "</table>"
+} echo "</table>";
 
-$con->close()
+$con->close();
 ?>
 
 <br><br>
