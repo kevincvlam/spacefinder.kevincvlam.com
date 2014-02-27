@@ -114,6 +114,35 @@ function getMaxPop($building, $floor, $area, $connect){
 	return 0;
 }
 
+
+//returns summed minimum population from access points with a given building floor or area
+//expects first three values to be a string or null if not specified
+//$connect is expected to be a mysqli class (database connection)
+//returns an integer representing the Min population
+function getMinPop($building, $floor, $area, $connect){
+	//check for errors on connection
+	if($connect->errno != 0){
+		echo "Error with connection passed to function getPopulation";
+		exit();
+	}
+	//construct query:
+	$query  = "SELECT SUM(bminpop) FROM buildings WHERE apn IN (SELECT apn FROM buildings";
+	if($building) $query = $query . " WHERE bname = '" . $building;			//remember single quotes for sql query
+	if($floor) $query = $query . "' AND bfloor = '" . $floor;
+	if($area) $query = $query . "' AND barea = '" . $area;
+	$query = $query . "')";
+		
+	//call query
+	if($result = $connect->query($query)){					//if successful result
+		$row = $result->fetch_array();							//return result
+		$result->close();
+		return (int) $row[0];
+	}
+	
+	echo "error in result from query...result was null <br>";					//result was null
+	return 0;
+}
+
 //update.php
 //this is a php file that updates values in the populations table
 //for Robarts Library demo

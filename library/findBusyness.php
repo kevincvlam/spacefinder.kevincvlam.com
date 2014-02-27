@@ -65,7 +65,12 @@ function findBusynessTag ($building, $floor, $area){
 	//get values from SpaceFinder database
 	$currPop = getPopulation($building, $floor, $area, $con);
 	$maxPop = getMaxPop($building, $floor, $area, $con);
-	
+    $minPop = getMinPop($building, $floor, $area, $con);
+
+    // Normalize by $minPop
+    $currPop = $currPop - $minPop;
+    $maxPop = $maxPop - $minPop;
+
 	//calculate busyness index
 	if ($maxPop) { 
 	$busyness = $currPop / $maxPop *100;	
