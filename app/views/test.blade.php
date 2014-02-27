@@ -18,12 +18,16 @@ echo "<table border='1'>
 <tr>
 <th>Floor Number</th>
 <th> Current Population</th>
+<th> Max Population</th>
+<th> Min Population</th>
 </tr>";
 
 $number = getPopulation('Robarts Library', '1', 0, $con);
 echo "<tr>
 		<td> 1 </td>
 		<td> " . (string) $number . "</td>
+		<td> " . (string) getMaxPop('Robarts Library','1',0,$con) . "</td>
+		<td> " . (string) getMinPop('Robarts Library','1',0,$con) . "</td>
 	  </tr>";
 $number = getPopulation('Robarts Library', '2', 0, $con);
 echo "<tr>
