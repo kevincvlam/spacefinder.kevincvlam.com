@@ -18,8 +18,8 @@
         ?>
         // Create and draw the visualization.
         new google.visualization.SteppedAreaChart(document.getElementById('visualization')).
-            draw(data, {
-                        width: 1000, height: 400}
+            draw(data, {hAxis: {direction: -1}
+                       }
                 );
       }
       
