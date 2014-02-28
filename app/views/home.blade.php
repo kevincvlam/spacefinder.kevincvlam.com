@@ -21,7 +21,9 @@ for ($i = 1; $i <= 14; $i++) {
 		}
 	
 		echo "	<p><small>
-							<!-- Last Updated on -->
+							<a href=";echo asset("/floor/$i");
+
+                            echo ">More Info</a>
 							</time>
 							</small>
 						</p>
