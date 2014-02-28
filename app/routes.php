@@ -32,6 +32,11 @@ Route::get('datatest', function()
 	return View::make('datatest');
 });
 
+Route::get('graphdatatest', function()
+{
+	return View::make('graphdatatest');
+});
+
 Route::get('buildings', function()
 {
     $buildings = buildings::all();
