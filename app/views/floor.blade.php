@@ -14,7 +14,7 @@
         <?php
         include '/home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php';
         $con = connectToDB();
-        printGoogleChartData(72, 'Robarts Library', '{{$floornum}}', 0, $con); 
+        printGoogleChartData(72, 'Robarts Library', "$floornum", 0, $con); 
         ?>
         // Create and draw the visualization.
         new google.visualization.SteppedAreaChart(document.getElementById('visualization')).
