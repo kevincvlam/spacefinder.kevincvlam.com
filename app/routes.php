@@ -22,7 +22,7 @@ Route::get('howitworks', function()
 	return View::make('howitworks');
 });
 
-Route::get('floor/{floornum}', function($building, $floornum)
+Route::get('floor/{floornum}', function($floornum)
 {
     return View::make('floor')->with('floornum', $floornum);
 
