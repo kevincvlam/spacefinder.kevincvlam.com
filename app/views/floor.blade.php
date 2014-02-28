@@ -27,5 +27,5 @@
 
 @section('content')
 	Floor : {{$floornum}}<br>
-    <div id="visualization" style="width: 1000px; height: 400px;"></div>
+    <div id="visualization" style="height: 400px;"></div>
 @stop
