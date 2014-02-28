@@ -45,7 +45,7 @@ function findBusyness ($building, $floor, $area){
 		   echo "Busy";
 		   return 0;
 	}elseif ($busyness > 15 && $busyness <=60){
-		   echo "Normal";
+		   echo "Has Space";
 		   return 0;
 	}else{
 		echo "Empty";
