@@ -18,7 +18,7 @@
         ?>
         // Create and draw the visualization.
         new google.visualization.LineChart(document.getElementById('visualization')).
-            draw(data, {curveType: "function",
+            draw(data, {
                         width: 500, height: 400}
                 );
       }
