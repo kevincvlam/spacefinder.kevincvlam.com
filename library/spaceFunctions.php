@@ -213,4 +213,44 @@ function update(){
 	//RETURN 0 NO ERROR
 	return 0;
 }
+
+
+
+function getTimeSeries($numEntries, $building, $floor, $area, $connect){
+	//check for errors on connection
+	if($connect->errno != 0){
+		echo "Error with connection passed to function getPopulation";
+		exit();
+	}
+	//construct query:
+	$query  = "SELECT SUM(activeconn), timestamp FROM	";						//summing query	
+	$query = $query . "(SELECT apn, activeconn, timestamp FROM populations		
+	WHERE apn IN (SELECT apn FROM buildings";  								//building info subquery
+	if($building) $query = $query . " WHERE bname = '" . $building;			//building info subquery
+	if($floor) $query = $query . "' AND bfloor = '" . $floor;				//building info subquery
+	if($area) $query = $query . "' AND barea = '" . $area;					//building info subquery
+	$query = $query . "')";													//building info subquery
+	$query = $query . ") as relevantVals
+     GROUP BY timestamp
+     ORDER BY timestamp desc
+     LIMIT " . $numEntries;				
+	
+	//echo $query;   //display query for testing
+	
+	
+	//call query
+	if($result = $connect->query($query)){	
+		print_r($result);
+		return $result;
+		$result->close();
+	}
+	
+    $result->close();
+	echo "error in result from query...result was null <br>";					//result was null
+	return 0;
+
+}
+
+
+
 ?>

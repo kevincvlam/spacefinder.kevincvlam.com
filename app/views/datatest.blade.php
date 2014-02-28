@@ -30,7 +30,7 @@ include '/home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php';
 
 $con = connectToDB();
 
-function getTimeSeries($numEntries, $building, $floor, $area, $connect){
+function getTimeSeriesPrototype($numEntries, $building, $floor, $area, $connect){
 	//check for errors on connection
 	if($connect->errno != 0){
 		echo "Error with connection passed to function getPopulation";
@@ -70,7 +70,9 @@ function getTimeSeries($numEntries, $building, $floor, $area, $connect){
 }
 
 
-getTimeSeries(10, 'Robarts Library', '1', 0, $con);
-
+    $result = getTimeSeries(10, 'Robarts Library', '1', 0, $con);
+    while($row = $result->fetch_row()){
+        echo "$row[0] $row[1]<br>";
+    }
 ?>
 @stop
