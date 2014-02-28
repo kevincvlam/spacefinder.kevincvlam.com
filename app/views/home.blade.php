@@ -21,7 +21,7 @@ for ($i = 1; $i <= 14; $i++) {
 		}
 	
 		echo "	<p><small>
-							Last Updated on
+							<!-- Last Updated on -->
 							</time>
 							</small>
 						</p>
