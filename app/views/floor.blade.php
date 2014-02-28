@@ -30,9 +30,9 @@
        <?php
 			echo "<div data-alert class='alert-box "; 
 			// Insert Tag Here
-			findBusynessTag('Robarts Library', {{ $floornum }}, 0);
+			findBusynessTag('Robarts Library', $floornum, 0);
 			echo" radius'>";
-			findBusyness('Robarts Library', {{ $floornum }}, 0);	 
+			findBusyness('Robarts Library', $floornum, 0);	 
 			echo"</div>"
        ?>
 
