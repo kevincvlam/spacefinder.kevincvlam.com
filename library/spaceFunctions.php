@@ -70,7 +70,8 @@ function getPopulation($building, $floor, $area, $connect){
 	if($area) $query = $query . "' AND barea = '" . $area;					//building info subquery
 	$query = $query . "')";													//building info subquery
 	$query = $query . " ORDER BY timestamp desc
-    GROUP BY apn) as relevantVals";				
+    ) as relevantVals
+    GROUP BY apn";				
 	
 	//echo $query;   //display query for testing
 	
