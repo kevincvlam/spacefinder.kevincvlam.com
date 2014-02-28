@@ -65,7 +65,7 @@ function getTimeSeries($numEntries, $building, $floor, $area, $connect){
 
 }
 
-getTimeSeries(5, 'Robarts Library', '1', 0, $con){
+getTimeSeries(5, 'Robarts Library', '1', 0, $con);
 
 ?>
 @stop
