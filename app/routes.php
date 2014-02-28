@@ -27,6 +27,11 @@ Route::get('charttest', function()
 	return View::make('charttest');
 });
 
+Route::get('datatest', function()
+{
+	return View::make('datatest');
+});
+
 Route::get('buildings', function()
 {
     $buildings = buildings::all();

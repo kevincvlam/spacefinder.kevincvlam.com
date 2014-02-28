@@ -5,8 +5,8 @@
 <h1> How it Works </h1>
 
 <p>
-SpaceFinder uses wireless network usage data in order to estimate the busyness 
-of a location by using data about the number of active connections at a given
+SpaceFinder estimates the busyness 
+of a location by using time-series data about the number of active connections at a given
 wireless access point.
 
 We're currently running on live data from Robarts Library, and hope to expand
