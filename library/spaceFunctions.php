@@ -254,7 +254,7 @@ function printGoogleChartData($numEntries, $building, $floor, $area, $connect){
     $result = getTimeSeries($numEntries, $building, $floor, $area, $connect);
     echo "
     var data = google.visualization.arrayToDataTable([
-    ['Active Connections, 'Time'],
+    ['Active Connections', 'Time'],
     ";
     for($i = 0; $i < $result->num_rows; $i++){
         $row = $result->fetch_row();
