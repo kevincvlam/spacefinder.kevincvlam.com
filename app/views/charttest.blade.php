@@ -19,8 +19,7 @@
         // Create and draw the visualization.
         new google.visualization.LineChart(document.getElementById('visualization')).
             draw(data, {curveType: "function",
-                        width: 500, height: 400,
-                        vAxis: {maxValue: 10}}
+                        width: 500, height: 400}
                 );
       }
       
