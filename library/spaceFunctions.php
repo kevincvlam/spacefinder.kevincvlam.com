@@ -240,7 +240,6 @@ function getTimeSeries($numEntries, $building, $floor, $area, $connect){
 	
 	//call query
 	if($result = $connect->query($query)){	
-		print_r($result);
 		return $result;
 		$result->close();
 	}
