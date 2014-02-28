@@ -36,7 +36,7 @@ function findBusyness ($building, $floor, $area){
 	// echo "<br> busyness is : " . $busyness . "<br>";  //display busyness for testing
 	
 	if ($busyness > 100){
-		   echo "Overcrowded";
+		   echo "Very Crowded";
 		   return 0;
 	}elseif ($busyness > 90 && $busyness <=100){
 		   echo "Crowded";
