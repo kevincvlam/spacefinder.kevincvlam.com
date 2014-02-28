@@ -54,9 +54,9 @@ function getTimeSeries($numEntries, $building, $floor, $area, $connect){
 	
 	//call query
 	if($result = $connect->query($query)){					//if successful result
-		$row = $result->fetch_array();							//return result
+		while($row = $result->fetch_array(MYSQLI_NUM))
 		$result->close();
-        echo $row;
+        	//echo $row;
 		return (int) $row[0];
 	}
 	
@@ -65,7 +65,8 @@ function getTimeSeries($numEntries, $building, $floor, $area, $connect){
 
 }
 
-getTimeSeries(5, 'Robarts Library', '1', 0, $con);
+
+echo getTimeSeries(5, 'Robarts Library', '1', 0, $con);
 
 ?>
 @stop

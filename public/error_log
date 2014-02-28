@@ -12,3 +12,6 @@
 [27-Feb-2014 21:16:16 UTC] PHP Parse error:  syntax error, unexpected '$con' (T_VARIABLE), expecting ',' or ';' in /home7/kevincvl/public_html/spacefinder/app/storage/views/dbbe079a34365ee9663f1d23646985e9 on line 34
 [27-Feb-2014 21:17:08 UTC] PHP Parse error:  syntax error, unexpected '$con' (T_VARIABLE), expecting ',' or ';' in /home7/kevincvl/public_html/spacefinder/app/storage/views/dbbe079a34365ee9663f1d23646985e9 on line 34
 [27-Feb-2014 21:17:10 UTC] PHP Parse error:  syntax error, unexpected '$con' (T_VARIABLE), expecting ',' or ';' in /home7/kevincvl/public_html/spacefinder/app/storage/views/dbbe079a34365ee9663f1d23646985e9 on line 34
+[28-Feb-2014 17:15:23 UTC] PHP Parse error:  syntax error, unexpected '{' in /home7/kevincvl/public_html/spacefinder/app/storage/views/9c42b971822b64bb151254c8df997767 on line 67
+[28-Feb-2014 17:15:28 UTC] PHP Parse error:  syntax error, unexpected '{' in /home7/kevincvl/public_html/spacefinder/app/storage/views/9c42b971822b64bb151254c8df997767 on line 67
+[28-Feb-2014 17:17:43 UTC] PHP Parse error:  syntax error, unexpected '{' in /home7/kevincvl/public_html/spacefinder/app/storage/views/9c42b971822b64bb151254c8df997767 on line 67
