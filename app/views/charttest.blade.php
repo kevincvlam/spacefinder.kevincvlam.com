@@ -14,12 +14,12 @@
         <?php
         include '/home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php';
         $con = connectToDB();
-        printGoogleChartData(40, 'Robarts Library', '1', 0, $con); 
+        printGoogleChartData(72, 'Robarts Library', '1', 0, $con); 
         ?>
         // Create and draw the visualization.
         new google.visualization.LineChart(document.getElementById('visualization')).
             draw(data, {
-                        width: 500, height: 400}
+                        width: 1000, height: 400}
                 );
       }
       
