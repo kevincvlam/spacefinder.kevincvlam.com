@@ -20,12 +20,10 @@ for ($i = 1; $i <= 14; $i++) {
 			echo '<h4>Robarts Building:<br></h4>';
 		}
 	
-		echo "	<p><small>
+		echo "	<p>
 							<a href=";echo asset("/floor/$i");
 
                             echo ">More Info</a>
-							</time>
-							</small>
 						</p>
 				</div>
 
