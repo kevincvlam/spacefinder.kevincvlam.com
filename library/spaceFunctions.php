@@ -256,10 +256,10 @@ function printGoogleChartData($numEntries, $building, $floor, $area, $connect){
     var data = google.visualization.arrayToDataTable([
     ['Time', 'Active Connections'],
     ";
-    for($i = $result->num_rows; $i >= 0; $i--){
+    for($i = 0; $i < $result->num_rows; $i++){
         $row = $result->fetch_row();
         $row[1] = substr($row[1], 11);
-        if($i > 0){
+        if($i != $result->num_rows-1){
                 echo "['$row[1]', $row[0]],";
         }
         else{
