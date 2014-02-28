@@ -22,6 +22,11 @@ Route::get('howitworks', function()
 	return View::make('howitworks');
 });
 
+Route::get('charttest', function()
+{
+	return View::make('charttest');
+});
+
 Route::get('buildings', function()
 {
     $buildings = buildings::all();
