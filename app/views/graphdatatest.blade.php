@@ -8,13 +8,15 @@ include '/home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php';
 
     $result = getTimeSeries(12, 'Robarts Library', '1', 0, $con);
     echo "['Active Connections, 'Time'],<br>";
-    echo $results[lengths][num_rows];
-    /*
-    for($i = 0; $i < $result[lengths][num_rows]; $i++){
+    for($i = 0; $i < $result->num_rows; $i++){
         $row = $result->fetch_row();
-        echo "[$row[0], '$row[1]'],<br>";
+	if($i != $result->num_rows-1){
+        	echo "[$row[0], '$row[1]'],<br>";
+	}
+	else{
+        	echo "[$row[0], '$row[1]']<br>";
+	}
     }
-*/
 
 ?>
 @stop
