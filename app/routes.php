@@ -14,12 +14,16 @@
 Route::get('/', function()
 {
 	return View::make('home');
-	//return View::make('test');
 });
 
 Route::get('howitworks', function()
 {
 	return View::make('howitworks');
+});
+
+Route::get('connor', function()
+{
+	return View::make('connor');
 });
 
 Route::get('floor/{floornum}', function($floornum)
