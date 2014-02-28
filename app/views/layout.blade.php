@@ -96,7 +96,7 @@
         </div>
         <div class="large-6 columns">
           <ul class="inline-list right">
-            <li><a href="#">How it Works</a></li>
+            <li><a href="<?php echo asset('/howitworks')?>">How it Works</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="#">Facebook</a></li>
             <li><a href="#">Twitter</a></li>

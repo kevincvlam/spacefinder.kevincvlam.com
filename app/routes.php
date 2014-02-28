@@ -17,6 +17,11 @@ Route::get('/', function()
 	//return View::make('test');
 });
 
+Route::get('howitworks', function()
+{
+	return View::make('howitworks');
+});
+
 Route::get('buildings', function()
 {
     $buildings = buildings::all();
