@@ -71,7 +71,7 @@ function getPopulation($building, $floor, $area, $connect){
 	$query = $query . "')";													//building info subquery
 	$query = $query . " ORDER BY timestamp desc
     ) as relevantVals
-    GROUP BY apn";				
+     GROUP BY apn";				
 	
 	//echo $query;   //display query for testing
 	
