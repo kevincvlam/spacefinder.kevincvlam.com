@@ -17,7 +17,7 @@
         printGoogleChartData(72, 'Robarts Library', '1', 0, $con); 
         ?>
         // Create and draw the visualization.
-        new google.visualization.LineChart(document.getElementById('visualization')).
+        new google.visualization.SteppedAreaChart(document.getElementById('visualization')).
             draw(data, {
                         width: 1000, height: 400}
                 );
