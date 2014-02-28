@@ -47,7 +47,7 @@ function getTimeSeries($numEntries, $building, $floor, $area, $connect){
 	$query = $query . ") as relevantVals
      GROUP BY timestamp
      ORDER BY timestamp desc
-     LIMIT" . $numEntries;				
+     LIMIT " . $numEntries;				
 	
 	//echo $query;   //display query for testing
 	
