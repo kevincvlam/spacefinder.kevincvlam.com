@@ -5,7 +5,7 @@
 <?php
 include '/home7/kevincvl/public_html/spacefinder/library/findBusyness.php';
 
-for ($i = 0; $i <= 14; $i++) {
+for ($i = 1; $i <= 14; $i++) {
 	echo "        <div class='venue'>
         <div class='large-12 columns panel'>
         
