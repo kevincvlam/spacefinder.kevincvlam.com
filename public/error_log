@@ -15,3 +15,4 @@
 [28-Feb-2014 17:15:23 UTC] PHP Parse error:  syntax error, unexpected '{' in /home7/kevincvl/public_html/spacefinder/app/storage/views/9c42b971822b64bb151254c8df997767 on line 67
 [28-Feb-2014 17:15:28 UTC] PHP Parse error:  syntax error, unexpected '{' in /home7/kevincvl/public_html/spacefinder/app/storage/views/9c42b971822b64bb151254c8df997767 on line 67
 [28-Feb-2014 17:17:43 UTC] PHP Parse error:  syntax error, unexpected '{' in /home7/kevincvl/public_html/spacefinder/app/storage/views/9c42b971822b64bb151254c8df997767 on line 67
+[28-Feb-2014 18:30:06 UTC] PHP Fatal error:  Call to undefined method mysqli_result::mysql_fetch_row() in /home7/kevincvl/public_html/spacefinder/app/storage/views/9c42b971822b64bb151254c8df997767 on line 56

@@ -37,7 +37,7 @@ function getTimeSeries($numEntries, $building, $floor, $area, $connect){
 		exit();
 	}
 	//construct query:
-	$query  = "SELECT SUM(activeconn) FROM	";						//summing query	
+	$query  = "SELECT SUM(activeconn), timestamp FROM	";						//summing query	
 	$query = $query . "(SELECT apn, activeconn, timestamp FROM populations		
 	WHERE apn IN (SELECT apn FROM buildings";  								//building info subquery
 	if($building) $query = $query . " WHERE bname = '" . $building;			//building info subquery
@@ -53,9 +53,12 @@ function getTimeSeries($numEntries, $building, $floor, $area, $connect){
 	
 	
 	//call query
-	if($result = $connect->query($query)){					//if successful result
-		while($row = $result->fetch_array(MYSQLI_NUM)){
-        	echo "$row[0]<br>";
+	if($result = $connect->query($query)){	
+		print_r($result);
+		echo "<br><br>";
+		while($row = $result->fetch_row()){
+		//print_r($row);
+        	echo "$row[0] $row[1]<br>";
         }
 		return (int) $row[0];
 		$result->close();
