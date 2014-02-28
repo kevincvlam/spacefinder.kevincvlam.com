@@ -15,6 +15,7 @@
 	</style>
     <script src="<?php echo asset('/static/js/vendor/modernizr.js')?>"></script>
         
+    @yield('scripts')
   </head>
   <body>
 
