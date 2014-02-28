@@ -28,7 +28,6 @@
     </script>
   </head>
   <body style="font-family: Arial;border: 0 none;">
-    Floor: {{floornum}}
     <div id="visualization" style="width: 1000px; height: 400px;"></div>
   </body>
 </html>
