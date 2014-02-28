@@ -26,6 +26,16 @@
 @stop
 
 @section('content')
-	Floor : {{$floornum}}<br>
-    <div id="visualization" style="height: 400px;"></div>
+    <h1> Robarts Building, Floor {{ $floornum }} </h1>
+       <?php
+			echo "<div data-alert class='alert-box "; 
+			// Insert Tag Here
+			findBusynessTag('Robarts Library', $i, 0);
+			echo" radius'>";
+			findBusyness('Robarts Library', $i, 0);	 
+			echo"</div>"
+       ?>
+
+       <h3> Recent Wireless Activity </h3>
+        <div id="visualization" style="height: 400px;"></div>
 @stop
