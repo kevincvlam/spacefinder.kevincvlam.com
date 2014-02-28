@@ -22,6 +22,16 @@ Route::get('howitworks', function()
 	return View::make('howitworks');
 });
 
+Route::get('floor/{floornum}', function($building, $floornum)
+{
+    return View::make('floor')->with('floornum', $floornum);
+
+});
+
+
+// Tests
+
+
 Route::get('charttest', function()
 {
 	return View::make('charttest');
