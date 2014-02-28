@@ -63,7 +63,9 @@ function getPopulation($building, $floor, $area, $connect){
 	}
 	//construct query:
 	$query  = "SELECT SUM(activeconn) FROM	";						//summing query	
-	$query = $query . "(SELECT apn, activeconn, timestamp FROM populations		
+	$query = $query . "SELECT apn, activeconn, timestamp 
+    FROM
+    (SELECT apn, activeconn, timestamp FROM populations		
 	WHERE apn IN (SELECT apn FROM buildings";  								//building info subquery
 	if($building) $query = $query . " WHERE bname = '" . $building;			//building info subquery
 	if($floor) $query = $query . "' AND bfloor = '" . $floor;				//building info subquery
@@ -71,7 +73,7 @@ function getPopulation($building, $floor, $area, $connect){
 	$query = $query . "')";													//building info subquery
 	$query = $query . " ORDER BY timestamp desc
     ) as relevantVals
-     GROUP BY apn";				
+     GROUP BY apn) as vals";				
 	
 	//echo $query;   //display query for testing
 	
