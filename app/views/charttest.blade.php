@@ -28,6 +28,6 @@
     </script>
   </head>
   <body style="font-family: Arial;border: 0 none;">
-    <div id="visualization" style="width: 500px; height: 400px;"></div>
+    <div id="visualization" style="width: 1000px; height: 400px;"></div>
   </body>
 </html>
