@@ -232,7 +232,7 @@ function getTimeSeries($numEntries, $building, $floor, $area, $connect){
 	$query = $query . "')";													//building info subquery
 	$query = $query . ") as relevantVals
      GROUP BY timestamp
-     ORDER BY timestamp asc
+     ORDER BY timestamp desc
      LIMIT " . $numEntries;				
 	
 	//echo $query;   //display query for testing
