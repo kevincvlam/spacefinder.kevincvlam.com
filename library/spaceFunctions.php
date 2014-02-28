@@ -250,6 +250,24 @@ function getTimeSeries($numEntries, $building, $floor, $area, $connect){
 
 }
 
-
+function printGoogleChartData($numEntries, $building, $floor, $area, $connect){
+    $result = getTimeSeries($numEntries, $building, $floor, $area, $connect);
+    echo "
+    var data = google.visualization.arrayToDataTable([
+    ['Active Connections, 'Time'],
+    ";
+    for($i = 0; $i < $result->num_rows; $i++){
+        $row = $result->fetch_row();
+	if($i != $result->num_rows-1){
+        	echo "[$row[0], '$row[1]'],";
+	}
+	else{
+        	echo "[$row[0], '$row[1]']
+            ]);
+            ";
+	}
+    }
+    return 0;
+} 
 
 ?>
