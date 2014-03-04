@@ -49,14 +49,14 @@
    }
 ?>
 
-	<img id="library" src="<?php echo asset('static/006-_13th-AP-positions-page1.jpg')?>" alt = "Robarts Floor Map" width="2550" height ="3300" usemap="#triangle">
+	<img id="library" src="<?php echo asset('static/006-_13th-AP-positions-page1_smaller.jpg')?>" alt = "Robarts Floor Map" width="893" height ="886" usemap="#triangle">
 	<map id="triangle" name ="triangle">
 		
 	
-		<area shape="poly" title="Quadrant1" href="#1" alt="Quadrant1" coords="91,463, 900,463, 897,817, 801,989, 491,1177, 91,463" data-maphilight='{<?php echoColour($q1);?>}'/>
-		<area shape="poly" title="Quadrant2" href="#2" alt="Quadrant2" coords="1627,451, 2453,461, 2151,1055, 1745,977, 1651,821, 1627,451" data-maphilight='{<?php echoColour($q2);?>}'/>
-		<area shape="poly" title="Quadrant3" href="#3" alt="Quadrant3" coords="775,1657, 1771,1667, 1271,2511, 775,1657" data-maphilight='{<?php echoColour($q3);?>}'/>
-		<area shape="poly" title="Quadrant4" href="#4" alt="Quadrant4" coords="1135,887, 1403,891, 1551,1179, 1425,1381, 1109,1391, 977,1165, 1135,887" data-maphilight='{<?php echoColour($q4);?>}'/>
+		<area shape="poly" title="Quadrant1" href="#1" alt="Quadrant1" coords="30,135, 313,137, 313,259, 281,217, 175,396, 30,135" data-maphilight='{<?php echoColour($q1);?>}'/>
+		<area shape="poly" title="Quadrant2" href="#2" alt="Quadrant2" coords="570,131, 859,135, 756,323, 609,320, 576,262, 571,131" data-maphilight='{<?php echoColour($q2);?>}'/>
+		<area shape="poly" title="Quadrant3" href="#3" alt="Quadrant3" coords="282,579, 602,587, 444,853, 282,579" data-maphilight='{<?php echoColour($q3);?>}'/>
+		<area shape="poly" title="Quadrant4" href="#4" alt="Quadrant4" coords="389,282, 488,282, 543,383, 500,456, 387,456, 343,383, 389,282" data-maphilight='{<?php echoColour($q4);?>}'/>
 	</map>
 
 </body>
