@@ -7,11 +7,14 @@ include '/home7/kevincvl/public_html/spacefinder/library/findBusyness.php';
 
 
 $busynessIndex = getBusyIndex(); 
+$row = $busynessIndex->fetch_array();
+$curIndex = 100*$row[2];
+i
 for ($i = 1; $i <= 14; $i++) {
     // Determine Words Here
     $row = $busynessIndex->fetch_array();
     $curIndex = 100*$row[2];
-    echo $curIndex;
+//    echo $curIndex;
 
 
 	if ($curIndex > CROWDED_THRESHOLD){
