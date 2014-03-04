@@ -1,4 +1,10 @@
 <?php
+// Define a few constants that are reused
+define('EMPTY_THRESHOLD', '15');
+define('HASSPACE_THRESHOLD', '30');
+define('BUSY_THRESHOLD', '70');
+define('CROWDED_THRESHOLD', '90');
+
 
 //This function will be called by external html ie front end UI
 //expects three values to be a string or null if not specified
@@ -35,16 +41,19 @@ function findBusyness ($building, $floor, $area){
 	
 	// echo "<br> busyness is : " . $busyness . "<br>";  //display busyness for testing
 	
-	if ($busyness > 90){
+	if ($busyness > Constants::CROWDED_THRESHOLD){
 		   echo "Very Crowded";
 		   return 0;
-	}elseif ($busyness > 70 && $busyness <=90){
+	}elseif ($busyness > Constants::BUSY_THRESHOLD
+    && $busyness <= Constants::CROWDED_THRESHOLD){
 		   echo "Crowded";
 		   return 0;
-	}elseif ($busyness > 40 && $busyness <=70){
+	}elseif ($busyness > Constants::HASSPACE_THRESHOLD
+    && $busyness <= Constants:: BUSY_THRESHOLD){
 		   echo "Busy";
 		   return 0;
-	}elseif ($busyness > 15 && $busyness <=40){
+	}elseif ($busyness > Constants::EMPTY_THRESHOLD 
+    && $busyness <= Constants::HASSPACE_THRESHOLD){
 		   echo "Has Space";
 		   return 0;
 	}else{
@@ -86,16 +95,19 @@ function findBusynessTag ($building, $floor, $area){
 	
 	// echo "<br> busyness is : " . $busyness . "<br>";  //display busyness for testing
 	
-	if ($busyness > 90){
+	if ($busyness > Constants::CROWDED_THRESHOLD){
 		   echo "alert";
 		   return 0;
-	}elseif ($busyness > 70 && $busyness <=90){
+	}elseif ($busyness > Constants::BUSY_THRESHOLD
+    && $busyness <= Constants::CROWDED_THRESHOLD){
 		   echo "alert";
 		   return 0;
-	}elseif ($busyness > 40 && $busyness <=70){
+	}elseif ($busyness > Constants::HASSPACE_THRESHOLD
+    && $busyness <= Constants:: BUSY_THRESHOLD){
 		   echo "warning";
 		   return 0;
-	}elseif ($busyness > 15 && $busyness <=40){
+	}elseif ($busyness > Constants::EMPTY_THRESHOLD 
+    && $busyness <= Constants::HASSPACE_THRESHOLD){
 		   echo "success";
 		   return 0;
 	}else{
