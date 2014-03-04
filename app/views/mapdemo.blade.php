@@ -28,22 +28,22 @@
 
    function echoColour($index){
         if ($busyness > CROWDED_THRESHOLD){
-               echo "fillColor":"ff0000", "alwaysOn":"true", "fillOpacity = 0.5";
+               echo "fillColor':'ff0000', 'alwaysOn':'true', 'fillOpacity = 0.5";
                return 0;
         }elseif ($busyness > BUSY_THRESHOLD
         && $busyness <= CROWDED_THRESHOLD){
-               echo "fillColor":"ff0000", "alwaysOn":"true", "fillOpacity = 0.5";
+               echo "fillColor':'ff0000', 'alwaysOn':'true', 'fillOpacity = 0.5";
                return 0;
         }elseif ($busyness > HASSPACE_THRESHOLD
         && $busyness <=  BUSY_THRESHOLD){
-               echo "fillColor":"FF6103", "alwaysOn":"true", "fillOpacity = 0.7";
+               echo "fillColor':'FF6103', 'alwaysOn':'true', 'fillOpacity = 0.7";
                return 0;
         }elseif ($busyness > EMPTY_THRESHOLD 
         && $busyness <= HASSPACE_THRESHOLD){
-               echo "fillColor":"5DFC0A", "alwaysOn":"true", "fillOpacity = 0.7";
+               echo "fillColor':'5DFC0A', 'alwaysOn':'true', 'fillOpacity = 0.7";
                return 0;
         }else{
-            echo "fillColor":"1874CD", "alwaysOn":"true", "fillOpacity = 0.6";
+            echo "fillColor':'1874CD', 'alwaysOn':'true', 'fillOpacity = 0.6";
             return 0;
         }
    }
@@ -53,10 +53,10 @@
 	<map id="triangle" name ="triangle">
 		
 	
-		<area shape="poly" title="Quadrant1" href="#1" alt="Quadrant1" coords="91,463, 900,463, 897,817, 801,989, 491,1177, 91,463" data-maphilight='{"<?php echoColour($q1);?>"}'/>
-		<area shape="poly" title="Quadrant2" href="#2" alt="Quadrant2" coords="1627,451, 2453,461, 2151,1055, 1745,977, 1651,821, 1627,451" data-maphilight='{"<?php echoColour($q2);?>"}'/>
-		<area shape="poly" title="Quadrant3" href="#3" alt="Quadrant3" coords="775,1657, 1771,1667, 1271,2511, 775,1657" data-maphilight='{"<?php echoColour($q3);?>"}'/>
-		<area shape="poly" title="Quadrant4" href="#4" alt="Quadrant4" coords="1135,887, 1403,891, 1551,1179, 1425,1381, 1109,1391, 977,1165, 1135,887" data-maphilight='{"<?php echoColour($q4);?>"}'/>
+		<area shape="poly" title="Quadrant1" href="#1" alt="Quadrant1" coords="91,463, 900,463, 897,817, 801,989, 491,1177, 91,463" data-maphilight='{'<?php echoColour($q1);?>'}'/>
+		<area shape="poly" title="Quadrant2" href="#2" alt="Quadrant2" coords="1627,451, 2453,461, 2151,1055, 1745,977, 1651,821, 1627,451" data-maphilight='{'<?php echoColour($q2);?>'}'/>
+		<area shape="poly" title="Quadrant3" href="#3" alt="Quadrant3" coords="775,1657, 1771,1667, 1271,2511, 775,1657" data-maphilight='{'<?php echoColour($q3);?>'}'/>
+		<area shape="poly" title="Quadrant4" href="#4" alt="Quadrant4" coords="1135,887, 1403,891, 1551,1179, 1425,1381, 1109,1391, 977,1165, 1135,887" data-maphilight='{'<?php echoColour($q4);?>'}'/>
 	</map>
 
 </body>
