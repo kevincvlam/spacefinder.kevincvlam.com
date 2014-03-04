@@ -5,7 +5,39 @@
 <?php
 include '/home7/kevincvl/public_html/spacefinder/library/findBusyness.php';
 
+
+$curIndexIndex = getBusyIndex(); 
 for ($i = 1; $i <= 14; $i++) {
+    // Determine Words Here
+    $row = $curIndexIndex->fetch_array();
+    $curIndex = $row[2];
+    
+	if ($curIndex > CROWDED_THRESHOLD){
+           $word = "Very Crowded";
+           $tag = "alert";
+		   return 0;
+	}elseif ($curIndex > BUSY_THRESHOLD
+    && $curIndex <= CROWDED_THRESHOLD){
+           $word = "Crowded";
+           $tag = "alert";
+		   return 0;
+	}elseif ($curIndex > HASSPACE_THRESHOLD
+    && $curIndex <=  BUSY_THRESHOLD){
+           $word = "Busy";
+           $tag = "warning";
+		   return 0;
+	}elseif ($curIndex > EMPTY_THRESHOLD 
+    && $curIndex <= HASSPACE_THRESHOLD){
+           $word = "Has Space";
+           $tag = "success";
+		   return 0;
+	}else{
+        $word = "Empty";
+        $tag = "info";
+		return 0;
+	}
+
+
 	echo "        <div class='venue'>
         <div class='large-12 columns panel'>
         
@@ -37,6 +69,7 @@ for ($i = 1; $i <= 14; $i++) {
 					// Insert Tag Here
 					findBusynessTag('Robarts Library', $i, 0);
 					echo" radius'>";
+                    echo $word;
 				findBusyness('Robarts Library', $i, 0);	 
 			echo"</div>
 			
