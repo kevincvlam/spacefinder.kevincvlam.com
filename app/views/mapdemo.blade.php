@@ -19,7 +19,7 @@
 
 <?php
     // Run Some PHP To get busyness of each quadrant.
-    include '/home7/kevincvl/public_html/spacefinder/library/findBusynessIndex.php';
+    include '/home7/kevincvl/public_html/spacefinder/library/findBusyness.php';
    
    $q1 = findBusynessIndex("Robarts Building", "13", 1); 
    $q2 = findBusynessIndex("Robarts Building", "13", 2); 
