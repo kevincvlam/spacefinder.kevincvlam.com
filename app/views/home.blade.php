@@ -6,10 +6,9 @@
 include '/home7/kevincvl/public_html/spacefinder/library/findBusyness.php';
 
 
-//$busynessIndex = getBusyIndex(); 
+$busynessIndex = getBusyIndex(); 
 for ($i = 1; $i <= 14; $i++) {
     // Determine Words Here
-    /*
     $row = $busynessIndex->fetch_array();
     $curIndex = $row[2];
     echo $curIndex;
@@ -34,7 +33,7 @@ for ($i = 1; $i <= 14; $i++) {
         $word = "Empty";
         $tag = "info";
 	}
-*/
+    
     if($i != 6 && $i !=7 && $i != 14){ //Skip these floors no study area
 	echo "        <div class='venue'>
         <div class='large-12 columns panel'>
@@ -67,7 +66,7 @@ for ($i = 1; $i <= 14; $i++) {
 					// Insert Tag Here
 					findBusynessTag('Robarts Library', $i, 0);
 					echo" radius'>";
-                    //echo $word;
+                    echo $word;
 				findBusyness('Robarts Library', $i, 0);	 
 			echo"</div>
 			

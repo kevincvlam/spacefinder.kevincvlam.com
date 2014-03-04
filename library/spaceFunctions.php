@@ -224,14 +224,22 @@ function getBusyIndex(){
     FROM (
     (
 
-    SELECT apn, activeconn, MAX( TIMESTAMP ) 
+    SELECT apn, activeconn, timestamp
+    FROM (
+
+    SELECT apn, activeconn, timestamp
     FROM populations
+    ORDER BY timestamp desc
+    ) AS data
     GROUP BY apn
     ) AS currentData
+
+
     INNER JOIN buildings ON currentData.apn = buildings.apn
     )
     WHERE bname =  'Robarts Library'
-    GROUP BY bfloor";
+    GROUP BY bfloor
+    ";
 
 
 	//call query
