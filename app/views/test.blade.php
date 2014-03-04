@@ -20,15 +20,19 @@ echo "<table border='1'>
 <th> Current Population</th>
 <th> Max Population</th>
 <th> Min Population</th>
+<th> Busyness Index </th>
 </tr>";
 
 for ($i = 1; $i < 15; $i++){
 $number = getPopulation('Robarts Library', $i, 0, $con);
+$min = getMinPop('Robarts Library', $i,0,$con);
+$max = getMaxPop('Robarts Library', $i,0,$con);
 echo "<tr>
 		<td> $i </td>
 		<td> " . (string) $number . "</td>
-		<td> " . (string) getMaxPop('Robarts Library',$i,0,$con) . "</td>
-		<td> " . (string) getMinPop('Robarts Library',$i,0,$con) . "</td>
+		<td> " . (string) $max . "</td>
+		<td> " . (string) $min . "</td>
+		<td> " . (string) (100*($number-$min)/($max-$min)) . "</td>
 	  </tr>";
 } echo "</table>";
 
