@@ -9,8 +9,9 @@ include '/home7/kevincvl/public_html/spacefinder/library/findBusyness.php';
 $busynessIndex = getBusyIndex(); 
 $row = $busynessIndex->fetch_array();
 $curIndex = 100*$row[2];
-i
+
 for ($i = 1; $i <= 14; $i++) {
+
     // Determine Words Here
     $row = $busynessIndex->fetch_array();
     $curIndex = 100*$row[2];
@@ -67,10 +68,11 @@ for ($i = 1; $i <= 14; $i++) {
 					
 					<div data-alert class='alert-box "; 
 					// Insert Tag Here
-					findBusynessTag('Robarts Library', $i, 0);
+                    echo $tag;
+	//				findBusynessTag('Robarts Library', $i, 0);
 					echo" radius'>";
                     echo $word;
-				findBusyness('Robarts Library', $i, 0);	 
+	//			findBusyness('Robarts Library', $i, 0);	 
 			echo"</div>
 			
 					</h5>
