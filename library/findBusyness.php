@@ -41,19 +41,19 @@ function findBusyness ($building, $floor, $area){
 	
 	// echo "<br> busyness is : " . $busyness . "<br>";  //display busyness for testing
 	
-	if ($busyness > Constants::CROWDED_THRESHOLD){
+	if ($busyness > CROWDED_THRESHOLD){
 		   echo "Very Crowded";
 		   return 0;
-	}elseif ($busyness > Constants::BUSY_THRESHOLD
-    && $busyness <= Constants::CROWDED_THRESHOLD){
+	}elseif ($busyness > BUSY_THRESHOLD
+    && $busyness <= CROWDED_THRESHOLD){
 		   echo "Crowded";
 		   return 0;
-	}elseif ($busyness > Constants::HASSPACE_THRESHOLD
-    && $busyness <= Constants:: BUSY_THRESHOLD){
+	}elseif ($busyness > HASSPACE_THRESHOLD
+    && $busyness <=  BUSY_THRESHOLD){
 		   echo "Busy";
 		   return 0;
-	}elseif ($busyness > Constants::EMPTY_THRESHOLD 
-    && $busyness <= Constants::HASSPACE_THRESHOLD){
+	}elseif ($busyness > EMPTY_THRESHOLD 
+    && $busyness <= HASSPACE_THRESHOLD){
 		   echo "Has Space";
 		   return 0;
 	}else{
@@ -95,19 +95,19 @@ function findBusynessTag ($building, $floor, $area){
 	
 	// echo "<br> busyness is : " . $busyness . "<br>";  //display busyness for testing
 	
-	if ($busyness > Constants::CROWDED_THRESHOLD){
+	if ($busyness > CROWDED_THRESHOLD){
 		   echo "alert";
 		   return 0;
-	}elseif ($busyness > Constants::BUSY_THRESHOLD
-    && $busyness <= Constants::CROWDED_THRESHOLD){
+	}elseif ($busyness > BUSY_THRESHOLD
+    && $busyness <= CROWDED_THRESHOLD){
 		   echo "alert";
 		   return 0;
-	}elseif ($busyness > Constants::HASSPACE_THRESHOLD
-    && $busyness <= Constants:: BUSY_THRESHOLD){
+	}elseif ($busyness > HASSPACE_THRESHOLD
+    && $busyness <=  BUSY_THRESHOLD){
 		   echo "warning";
 		   return 0;
-	}elseif ($busyness > Constants::EMPTY_THRESHOLD 
-    && $busyness <= Constants::HASSPACE_THRESHOLD){
+	}elseif ($busyness > EMPTY_THRESHOLD 
+    && $busyness <= HASSPACE_THRESHOLD){
 		   echo "success";
 		   return 0;
 	}else{
