@@ -35,7 +35,7 @@ for ($i = 1; $i <= 14; $i++) {
         $tag = "info";
 	}
 */
-
+    if($i != 6 && $i !=7 && $i != 14){ //Skip these floors no study area
 	echo "        <div class='venue'>
         <div class='large-12 columns panel'>
         
@@ -82,8 +82,8 @@ for ($i = 1; $i <= 14; $i++) {
         </div>"; 
 
 
-}
-
+        }
+    }
 ?>
 
 
