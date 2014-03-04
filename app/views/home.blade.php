@@ -11,31 +11,25 @@ for ($i = 1; $i <= 14; $i++) {
     // Determine Words Here
     $row = $busynessIndex->fetch_array();
     $curIndex = $row[2];
-    echo $curIndex;
     
 	if ($curIndex > CROWDED_THRESHOLD){
            $word = "Very Crowded";
            $tag = "alert";
-		   return 0;
 	}elseif ($curIndex > BUSY_THRESHOLD
     && $curIndex <= CROWDED_THRESHOLD){
            $word = "Crowded";
            $tag = "alert";
-		   return 0;
 	}elseif ($curIndex > HASSPACE_THRESHOLD
     && $curIndex <=  BUSY_THRESHOLD){
            $word = "Busy";
            $tag = "warning";
-		   return 0;
 	}elseif ($curIndex > EMPTY_THRESHOLD 
     && $curIndex <= HASSPACE_THRESHOLD){
            $word = "Has Space";
            $tag = "success";
-		   return 0;
 	}else{
         $word = "Empty";
         $tag = "info";
-		return 0;
 	}
 
 
