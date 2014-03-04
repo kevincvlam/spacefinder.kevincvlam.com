@@ -10,7 +10,7 @@ $busynessIndex = getBusyIndex();
 for ($i = 1; $i <= 14; $i++) {
     // Determine Words Here
     $row = $busynessIndex->fetch_array();
-    $curIndex = $row[2];
+    $curIndex = 100*$row[2];
     echo $curIndex;
 
 	if ($curIndex > CROWDED_THRESHOLD){
