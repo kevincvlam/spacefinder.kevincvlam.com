@@ -12,6 +12,8 @@
 @stop
 
 @section('content')
+<div id="specialmap">
+<div class="cspecialmap">
 	<!--data-maphilight codes for different alert boxes
 	<!--Green: {"fillColor":"5DFC0A", "alwaysOn":"true", "fillOpacity = 0.7"} -->
 	<!--Blue: {"fillColor":"1874CD", "alwaysOn":"true", "fillOpacity = 0.6"} -->
@@ -28,5 +30,6 @@
 		<area shape="poly" title="Quadrant3" href="#3" alt="Quadrant3" coords="775,1657, 1771,1667, 1271,2511, 775,1657" data-maphilight='{"fillColor":"1874CD", "alwaysOn":"true","fillOpacity":"0.6"}'/>
 		<area shape="poly" title="Quadrant4" href="#4" alt="Quadrant4" coords="1135,887, 1403,891, 1551,1179, 1425,1381, 1109,1391, 977,1165, 1135,887" data-maphilight='{"fillColor":"FF6103", "alwaysOn":"true", "fillOpacity":"0.6"}'/>
 	</map>
-
+</div>
+</div>
 @stop

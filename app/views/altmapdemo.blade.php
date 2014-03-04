@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-<table id="Table_01" width="1276" height="1221" border="0" cellpadding="0" cellspacing="0">
+<table id="Table_01" border="0" cellpadding="0" cellspacing="0">
 	<tr>
 		<td colspan="8">
 			<img src="<?php echo asset('static/images/006-_13th-AP-positions-page1_01.gif') ?>" width="1275" height="68" alt=""></td>
