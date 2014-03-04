@@ -21,9 +21,9 @@ Route::get('howitworks', function()
 	return View::make('howitworks');
 });
 
-Route::get('connor', function()
+Route::get('mapdemo', function()
 {
-	return View::make('connor');
+	return View::make('mapdemo');
 });
 
 Route::get('floor/{floornum}', function($floornum)
