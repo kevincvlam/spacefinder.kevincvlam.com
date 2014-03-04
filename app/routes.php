@@ -26,6 +26,11 @@ Route::get('mapdemo', function()
 	return View::make('mapdemo');
 });
 
+Route::get('altmapdemo', function()
+{
+	return View::make('altmapdemo');
+});
+
 Route::get('floor/{floornum}', function($floornum)
 {
     return View::make('floor')->with('floornum', $floornum);
