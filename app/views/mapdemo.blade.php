@@ -21,10 +21,10 @@
     // Run Some PHP To get busyness of each quadrant.
     include '/home7/kevincvl/public_html/spacefinder/library/findBusyness.php';
    
-   $q1 = findBusynessIndex("Robarts Building", "13", 1); 
-   $q2 = findBusynessIndex("Robarts Building", "13", 2); 
-   $q3 = findBusynessIndex("Robarts Building", "13", 3); 
-   $q4 = findBusynessIndex("Robarts Building", "13", 4);
+   $q1 = findBusynessIndex("Robarts Library", "13", 1); 
+   $q2 = findBusynessIndex("Robarts Library", "13", 2); 
+   $q3 = findBusynessIndex("Robarts Library", "13", 3); 
+   $q4 = findBusynessIndex("Robarts Library", "13", 4);
 
    function echoColour($index){
         if ($index > CROWDED_THRESHOLD){
