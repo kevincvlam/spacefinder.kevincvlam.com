@@ -5,6 +5,11 @@
 <?php
 include '/home7/kevincvl/public_html/spacefinder/library/findBusyness.php';
 
+define('EMPTY_THRESHOLD', '15');
+define('HASSPACE_THRESHOLD', '40');
+define('BUSY_THRESHOLD', '70');
+define('CROWDED_THRESHOLD', '90');
+
 
 $busynessIndex = getBusyIndex(); 
 for ($i = 1; $i <= 14; $i++) {
