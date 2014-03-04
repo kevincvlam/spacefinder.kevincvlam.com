@@ -1,7 +1,7 @@
 <?php
 // Define a few constants that are reused
 define('EMPTY_THRESHOLD', '15');
-define('HASSPACE_THRESHOLD', '30');
+define('HASSPACE_THRESHOLD', '40');
 define('BUSY_THRESHOLD', '70');
 define('CROWDED_THRESHOLD', '90');
 
