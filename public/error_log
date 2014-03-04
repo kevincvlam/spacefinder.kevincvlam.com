@@ -22,3 +22,11 @@
 [28-Feb-2014 19:11:28 UTC] PHP Fatal error:  Call to undefined method mysqli_result::fetch_length() in /home7/kevincvl/public_html/spacefinder/app/storage/views/8390d1fd20e9fd219f1f384cf36bcc13 on line 10
 [28-Feb-2014 19:11:36 UTC] PHP Fatal error:  Call to undefined method mysqli_result::fetch_lengths() in /home7/kevincvl/public_html/spacefinder/app/storage/views/8390d1fd20e9fd219f1f384cf36bcc13 on line 10
 [28-Feb-2014 19:12:19 UTC] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home7/kevincvl/public_html/spacefinder/app/storage/views/8390d1fd20e9fd219f1f384cf36bcc13 on line 10
+[28-Feb-2014 20:09:39 UTC] PHP Fatal error:  Call to undefined function findBusynessTag() in /home7/kevincvl/public_html/spacefinder/app/storage/views/d84e949fb9484921deeffdfa2101db4c on line 32
+[28-Feb-2014 20:10:20 UTC] PHP Fatal error:  Cannot redeclare connectToDB() (previously declared in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php:4) in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php on line 12
+[28-Feb-2014 20:11:48 UTC] PHP Parse error:  syntax error, unexpected '<' in /home7/kevincvl/public_html/spacefinder/app/storage/views/d84e949fb9484921deeffdfa2101db4c on line 32
+[04-Mar-2014 18:22:30 UTC] PHP Fatal error:  Class 'Constants' not found in /home7/kevincvl/public_html/spacefinder/library/findBusyness.php on line 98
+[04-Mar-2014 18:22:37 UTC] PHP Fatal error:  Class 'Constants' not found in /home7/kevincvl/public_html/spacefinder/library/findBusyness.php on line 98
+[04-Mar-2014 18:26:07 UTC] PHP Parse error:  syntax error, unexpected 'img' (T_STRING) in /home7/kevincvl/public_html/spacefinder/app/storage/views/ba6c2ab7e6c8f3f3220c451523276d7a on line 7
+[04-Mar-2014 18:26:55 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home7/kevincvl/public_html/spacefinder/app/storage/views/ba6c2ab7e6c8f3f3220c451523276d7a on line 21
+[04-Mar-2014 18:26:58 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home7/kevincvl/public_html/spacefinder/app/storage/views/ba6c2ab7e6c8f3f3220c451523276d7a on line 21
