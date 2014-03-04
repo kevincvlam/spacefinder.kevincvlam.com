@@ -214,7 +214,37 @@ function update(){
 	return 0;
 }
 
+function getBusyIndex(){
 
+	$connect = connectToDB();
+    $query = "
+    SELECT bname, bfloor, (
+    SUM( activeconn ) - SUM( bminpop )
+    ) / ( SUM( bmaxpop ) - SUM( bminpop ) ) 
+    FROM (
+    (
+
+    SELECT apn, activeconn, MAX( TIMESTAMP ) 
+    FROM populations
+    GROUP BY apn
+    ) AS currentData
+    INNER JOIN buildings ON currentData.apn = buildings.apn
+    )
+    WHERE bname =  'Robarts Library'
+    GROUP BY bfloor";
+
+
+	//call query
+	if($result = $connect->query($query)){	
+		return $result;
+		$result->close();
+	}
+	
+    $result->close();
+	echo "Something went wrong!";
+    return 0;
+
+}
 
 function getTimeSeries($numEntries, $building, $floor, $area, $connect){
 	//check for errors on connection

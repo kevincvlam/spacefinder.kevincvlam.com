@@ -119,4 +119,34 @@ function findBusynessTag ($building, $floor, $area){
 
 return 1;		//return 1 if the case statement did not work
 }
+
+function findBusynessIndex ($building, $floor, $area){
+	
+	if (!$building) echo "Error: No Building Indicated <br>";
+	
+	//connect to the SpaceFinder database
+	$con = connectToDB();
+	
+	if ($con->errno) return 2;			//return 2 if connection failed
+	
+	//get values from SpaceFinder database
+	$currPop = getPopulation($building, $floor, $area, $con);
+	$maxPop = getMaxPop($building, $floor, $area, $con);
+    $minPop = getMinPop($building, $floor, $area, $con);
+
+    // Normalize by $minPop
+    $currPop = $currPop - $minPop;
+    $maxPop = $maxPop - $minPop;
+	
+	//calculate busyness index
+	if ($maxPop) { 
+	$busyness = $currPop / $maxPop *100;	
+	} else {
+	echo "Error: Max Population is zero";
+	return 0;
+	}
+
+    return $busyness;
+}
+
 ?>
