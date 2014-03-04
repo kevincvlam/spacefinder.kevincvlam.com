@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('scripts)
+@section('scripts')
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="http://davidlynch.org/projects/maphilight/jquery.maphilight.js"></script>
 	<script type="text/javascript">
