@@ -28,11 +28,31 @@
 @section('content')
     <h1> Robarts Building, Floor {{ $floornum }} </h1>
        <?php
+            $curIndex = findBusynessIndex("Robarts Library", $floornum, 0); 
+            if ($curIndex > CROWDED_THRESHOLD){
+                   $word = "Very Crowded";
+                   $tag = "alert";
+            }elseif ($curIndex > BUSY_THRESHOLD
+            && $curIndex <= CROWDED_THRESHOLD){
+                   $word = "Crowded";
+                   $tag = "alert";
+            }elseif ($curIndex > HASSPACE_THRESHOLD
+            && $curIndex <=  BUSY_THRESHOLD){
+                   $word = "Busy";
+                   $tag = "warning";
+            }elseif ($curIndex > EMPTY_THRESHOLD 
+            && $curIndex <= HASSPACE_THRESHOLD){
+                   $word = "Has Space";
+                   $tag = "success";
+            }else{
+                $word = "Empty";
+                $tag = "info";
+            }
 			echo "<div data-alert class='alert-box "; 
 			// Insert Tag Here
-			findBusynessTag('Robarts Library', $floornum, 0);
+            echo $tag;
 			echo" radius'>";
-			findBusyness('Robarts Library', $floornum, 0);	 
+            echo $word;
 			echo"</div>"
        ?>
 
