@@ -30,3 +30,4 @@
 [04-Mar-2014 18:26:07 UTC] PHP Parse error:  syntax error, unexpected 'img' (T_STRING) in /home7/kevincvl/public_html/spacefinder/app/storage/views/ba6c2ab7e6c8f3f3220c451523276d7a on line 7
 [04-Mar-2014 18:26:55 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home7/kevincvl/public_html/spacefinder/app/storage/views/ba6c2ab7e6c8f3f3220c451523276d7a on line 21
 [04-Mar-2014 18:26:58 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home7/kevincvl/public_html/spacefinder/app/storage/views/ba6c2ab7e6c8f3f3220c451523276d7a on line 21
+[04-Mar-2014 19:25:01 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ',' or ';' in /home7/kevincvl/public_html/spacefinder/app/storage/views/ba6c2ab7e6c8f3f3220c451523276d7a on line 31

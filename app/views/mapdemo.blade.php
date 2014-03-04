@@ -27,19 +27,19 @@
    $q4 = findBusynessIndex("Robarts Building", "13", 4);
 
    function echoColour($index){
-        if ($busyness > CROWDED_THRESHOLD){
+        if ($index > CROWDED_THRESHOLD){
                echo "fillColor':'ff0000', 'alwaysOn':'true', 'fillOpacity = 0.5";
                return 0;
-        }elseif ($busyness > BUSY_THRESHOLD
-        && $busyness <= CROWDED_THRESHOLD){
+        }elseif ($index > BUSY_THRESHOLD
+        && $index <= CROWDED_THRESHOLD){
                echo "fillColor':'ff0000', 'alwaysOn':'true', 'fillOpacity = 0.5";
                return 0;
-        }elseif ($busyness > HASSPACE_THRESHOLD
-        && $busyness <=  BUSY_THRESHOLD){
+        }elseif ($index > HASSPACE_THRESHOLD
+        && $index <=  BUSY_THRESHOLD){
                echo "fillColor':'FF6103', 'alwaysOn':'true', 'fillOpacity = 0.7";
                return 0;
-        }elseif ($busyness > EMPTY_THRESHOLD 
-        && $busyness <= HASSPACE_THRESHOLD){
+        }elseif ($index > EMPTY_THRESHOLD 
+        && $index <= HASSPACE_THRESHOLD){
                echo "fillColor':'5DFC0A', 'alwaysOn':'true', 'fillOpacity = 0.7";
                return 0;
         }else{
