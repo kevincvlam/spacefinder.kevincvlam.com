@@ -19,7 +19,7 @@
 	<!--Orange: {"fillColor":"FF6103", "alwaysOn":"true", "fillOpacity = 0.7"} -->
 	
 
-	<img id="library" src="<? php echo asset('/static/006-_13th-AP-positions-page1.jpg')?>" alt = "Robarts Floor Map" width="2550" height ="3300" usemap="#triangle">
+	<img id="library" src="<?php echo asset('/static/006-_13th-AP-positions-page1.jpg')?>" alt = "Robarts Floor Map" width="2550" height ="3300" usemap="#triangle">
 	<map id="triangle" name ="triangle">
 		
 	
