@@ -72,7 +72,7 @@ for ($i = 1; $i <= 14; $i++) {
 	//				findBusynessTag('Robarts Library', $i, 0);
 					echo" radius'>";
                     echo $word;
-	//			findBusyness('Robarts Library', $i, 0);	 
+				findBusyness('Robarts Library', $i, 0);	 
 			echo"</div>
 			
 					</h5>
