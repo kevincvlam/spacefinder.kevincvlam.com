@@ -309,4 +309,213 @@ function printGoogleChartData($numEntries, $building, $floor, $area, $connect){
     return 0;
 } 
 
+
+//busynessTable Function
+//if input is only the building then return a mysqli object of the floor, floor business index, and timestamp
+//if input is the building and floor, return a mysqli object with the areas, area index and timestamp
+
+function busynessTable(){
+	//initialize connection
+	$con = connectToDB();
+	if ($con->errno){
+		echo "Could not establish connection in busynessTable function <br>";
+		return $con->errno;
+	}
+	if (func_num_args() == 1){
+		//call sql query for a building ie return floor array
+		$building = func_get_arg();
+		//build query
+		$query = "
+		SELECT bname, bfloor, (SUM( activeconn ) - SUM( bminpop )) / ( SUM( bmaxpop ) - SUM( bminpop ) ) 
+		FROM (
+		(
+
+		SELECT populations.apn, populations.activeconn, populations.timestamp 
+		FROM populations JOIN (
+		SELECT apn, MAX(timestamp) AS mostRecentTime
+		FROM populations
+		GROUP BY apn
+		) AS time ON populations.timestamp = time.mostRecentTime AND populations.apn = time.apn
+
+		) AS currentData
+		INNER JOIN buildings ON currentData.apn = buildings.apn
+		)
+		WHERE bname =  ";
+		$query = $query . $building;
+		$query = $query . "
+		GROUP BY bfloor";
+		
+		//submit query
+		if ($result = $con->query($query){ //if good result
+			$con->close;
+			return $result;
+		}
+		
+		echo "query error in busynessTable function <br>";
+		$con->close();
+		
+		return 0;
+	}
+	if (func_num_args() == 2){
+		//call sql query for a floor ie return area array
+		$building = func_get_arg(0);
+		$floor = func_get_arg(1);
+		//build query
+		$query = "
+		SELECT bname, bfloor, (SUM( activeconn ) - SUM( bminpop )) / ( SUM( bmaxpop ) - SUM( bminpop ) ) 
+		FROM (
+		(
+
+		SELECT populations.apn, populations.activeconn, populations.timestamp 
+		FROM populations JOIN (
+		SELECT apn, MAX(timestamp) AS mostRecentTime
+		FROM populations
+		GROUP BY apn
+		) AS time ON populations.timestamp = time.mostRecentTime AND populations.apn = time.apn
+
+		) AS currentData
+		INNER JOIN buildings ON currentData.apn = buildings.apn
+		)
+		WHERE bname =  ";
+		$query = $query . $building;
+		$query = $query . "WHERE bfloor =  ";
+		$query = $query . $floor;
+		$query = $query . "
+		GROUP BY barea";
+		
+		//submit query
+		if ($result = $con->query($query){ //if good result
+			$con->close;
+			return $result;
+		}
+		
+		echo "query error in busynessTable function <br>";
+		$con->close();
+		
+		return 0;
+	}
+		
+	echo "Too many or too few arguments to function businessTable <br>"
+	return 0;
+}
+
+//busynessIndex function
+//returns the business of a building, floor of a building, or area of a floor of a building depending
+// busynessIndex(building, [floor, [area]])
+function busynessIndex(){
+	//initialize connection
+	$con = connectToDB();
+	if ($con->errno){
+		echo "Could not establish connection in busynessTable function <br>";
+		return $con->errno;
+	}
+	if (func_num_args() == 1){
+		$building = func_get_arg(0);
+		//build query
+		$query = "
+		SELECT bname, bfloor, (SUM( activeconn ) - SUM( bminpop )) / ( SUM( bmaxpop ) - SUM( bminpop ) ) 
+		FROM (
+		(
+
+		SELECT populations.apn, populations.activeconn, populations.timestamp 
+		FROM populations JOIN (
+		SELECT apn, MAX(timestamp) AS mostRecentTime
+		FROM populations
+		GROUP BY apn
+		) AS time ON populations.timestamp = time.mostRecentTime AND populations.apn = time.apn
+
+		) AS currentData
+		INNER JOIN buildings ON currentData.apn = buildings.apn
+		)
+		WHERE bname =  ";
+		$query = $query . $building;
+				
+		//submit query
+		if ($result = $con->query($query){ //if good result
+			$con->close;
+			return $result;
+		}
+		//query error
+		echo "query error in busynessIndex function <br>";
+		$con->close();
+		
+		return 0;
+	}
+	if (func_num_args() == 2){
+		$building = func_get_arg(0);
+		$floor = func_get_arg(1);
+		//build query
+		$query = "
+		SELECT bname, bfloor, (SUM( activeconn ) - SUM( bminpop )) / ( SUM( bmaxpop ) - SUM( bminpop ) ) 
+		FROM (
+		(
+
+		SELECT populations.apn, populations.activeconn, populations.timestamp 
+		FROM populations JOIN (
+		SELECT apn, MAX(timestamp) AS mostRecentTime
+		FROM populations
+		GROUP BY apn
+		) AS time ON populations.timestamp = time.mostRecentTime AND populations.apn = time.apn
+
+		) AS currentData
+		INNER JOIN buildings ON currentData.apn = buildings.apn
+		)
+		WHERE bname = ";
+		$query = $query . $building;
+		$query = $query . " AND bfloor = ";
+		$query = $query . $floor;
+				
+		//submit query
+		if ($result = $con->query($query){ //if good result
+			$con->close;
+			return $result;
+		}
+		//query error
+		echo "query error in busynessIndex function <br>";
+		$con->close();
+		
+		return 0;	
+	}
+	if (func_num_args() == 3){
+		$building = func_get_arg(0);
+		$floor = func_get_arg(1);
+		$area = func_get_arg(2);
+		//build query
+		$query = "
+		SELECT bname, bfloor, (SUM( activeconn ) - SUM( bminpop )) / ( SUM( bmaxpop ) - SUM( bminpop ) ) 
+		FROM (
+		(
+
+		SELECT populations.apn, populations.activeconn, populations.timestamp 
+		FROM populations JOIN (
+		SELECT apn, MAX(timestamp) AS mostRecentTime
+		FROM populations
+		GROUP BY apn
+		) AS time ON populations.timestamp = time.mostRecentTime AND populations.apn = time.apn
+
+		) AS currentData
+		INNER JOIN buildings ON currentData.apn = buildings.apn
+		)
+		WHERE bname = ";
+		$query = $query . $building;
+		$query = $query . " AND bfloor = ";
+		$query = $query . $floor;
+		$query = $query . " AND barea = ";
+		$query = $query . $area;
+				
+		//submit query
+		if ($result = $con->query($query){ //if good result
+			$con->close;
+			return $result;
+		}
+		//query error
+		echo "query error in busynessIndex function <br>";
+		$con->close();
+		
+		return 0;
+		}
+	
+	echo "error with number of arguments to function busynessIndex";
+	return 0;
+
 ?>
