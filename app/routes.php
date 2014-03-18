@@ -23,8 +23,8 @@ Route::get('howitworks', function()
 
 Route::get('mapdata/{floornum}', function($floornum)
 {
-	if ($floornum > 14 || $floonum < 1) $floornum = 14;
-	switch ($floonum){
+	if ($floornum > 14 || $floornum < 1) $floornum = 14;
+	switch ($floornum){
 		case 1: return View::make('Robarts1stFloor');
 		case 2: return View::make('Robarts2ndFloor');
 		case 3: return View::make('Robarts3rdFloor');
