@@ -39,6 +39,7 @@ Route::get('mapdata/{floornum}', function($floornum)
 		case 12: return View::make('Robarts12thFloor');
 		case 13: return View::make('Robarts13thFloor');
 		case 14: return View::make('home');
+	}
 });
 
 Route::get('floor/{floornum}', function($floornum)
