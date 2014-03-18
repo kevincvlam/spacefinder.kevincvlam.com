@@ -29,7 +29,7 @@ Route::get('mapdata/{floornum}', function($floornum)
 		case 2: return View::make('Robarts2ndFloor');
 		case 3: return View::make('Robarts3rdFloor');
 		case 4: return View::make('Robarts4thFloor');
-		case 5: return View::make('Robarts5thstFloor');
+		case 5: return View::make('Robarts5thFloor');
 		case 6: return View::make('home');
 		case 7: return View::make('home');
 		case 8: return View::make('Robarts8thFloor');

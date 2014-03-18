@@ -49,7 +49,7 @@
    }
 ?>
 
-	<img id="library" src="<?php echo asset('static/Robarts3rdFloor.png')?>" alt = "Robarts Floor Map" width="862" height ="873" usemap="#triangle">
+	<img id="library" src="<?php echo asset('static/Robarts1stFloor.png')?>" alt = "Robarts Floor Map" width="862" height ="873" usemap="#triangle">
 	<map id="triangle" name ="triangle">
 		
 	

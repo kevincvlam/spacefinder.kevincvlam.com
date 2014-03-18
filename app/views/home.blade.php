@@ -56,7 +56,10 @@ for ($i = 1; $i <= 14; $i++) {
 		echo "	<p>
 							<a href=";echo asset("/floor/$i");
 
-                            echo ">More Info</a>
+                            echo ">More Info</a> <br> <a href=";
+							echo asset("/mapdata/$i");
+							echo ">See Floor Map</a>
+							
 						</p>
 				</div>
 
