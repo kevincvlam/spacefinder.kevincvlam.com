@@ -53,11 +53,11 @@
             echo $tag;
 			echo" radius'>";
             echo $word;
-			echo"</div>"
+			echo"</div>";
 
             echo "<a href=";
             echo asset("/mapdata/$floornum");
-            echo ">See Floor Map</a>
+            echo ">See Floor Map</a>";
        ?>
 
        <h3> Recent Wireless Activity </h3>
