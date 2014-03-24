@@ -21,7 +21,6 @@ $curIndex = 100*$row[2];
   <dd><a href="#3">3</a></dd>
   <dd><a href="#4">4</a></dd>
   <dd><a href="#5">5</a></dd>
-  <dd><a href="#7">7</a></dd>
   <dd><a href="#8">8</a></dd>
   <dd><a href="#9">9</a></dd>
   <dd><a href="#10">10</a></dd>
