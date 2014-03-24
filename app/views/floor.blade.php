@@ -55,11 +55,15 @@
             echo $word;
 			echo"</div>";
 
-            echo "<a href=";
-            echo asset("/mapdata/$floornum");
-            echo ">See Floor Map</a>";
        ?>
 
        <h3> Recent Wireless Activity </h3>
         <div id="visualization" style="height: 400px;"></div>
+
+        <?php 
+
+            echo "<a href=";
+            echo asset("/mapdata/$floornum");
+            echo ">See Floor Map</a>";
+        ?>
 @stop
