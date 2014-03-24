@@ -60,7 +60,7 @@ $i = 0;
 		echo "	<p>
 							<a href=";echo asset("/floors");
 
-                            echo '>See All Floors</a> <br>
+                            echo ">See All Floors</a> <br>
 							
 						</p>
 				</div>
