@@ -60,7 +60,7 @@ for ($i = 1; $i <= 14; $i++) {
         		<div class='small-8 medium-8 large-8 columns'>";
         		
     	if($i != 0){
-			echo '<a id=#'.$i.'><h4>Robarts Floor: '. $i . "<br></a></h4>";
+			echo '<a id='.$i.'><h4>Robarts Floor: '. $i . "<br></a></h4>";
 		}
 		else{
 			echo '<h4>Robarts Building:<br></h4>';
