@@ -10,6 +10,19 @@ $busynessIndex = getBusyIndex();
 $row = $busynessIndex->fetch_array();
 $curIndex = 100*$row[2];
 
+?>
+
+
+
+<dl class="sub-nav">
+  <dt>Jump to Floor:</dt>
+  <dd><a href="#1">1</a></dd>
+  <dd><a href="#2">2</a></dd>
+  <dd><a href="#3">3</a></dd>
+  <dd><a href="#4">4</a></dd>
+</dl>
+
+<?php
 for ($i = 1; $i <= 14; $i++) {
 
     // Determine Words Here
@@ -47,7 +60,7 @@ for ($i = 1; $i <= 14; $i++) {
         		<div class='small-8 medium-8 large-8 columns'>";
         		
     	if($i != 0){
-			echo '<h4>Robarts Floor: '. $i . "<br></h4>";
+			echo '<a id=#'.$i.'><h4>Robarts Floor: '. $i . "<br></a></h4>";
 		}
 		else{
 			echo '<h4>Robarts Building:<br></h4>';
