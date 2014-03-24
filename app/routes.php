@@ -13,9 +13,13 @@
 
 Route::get('/', function()
 {
-	return View::make('home');
+	return View::make('buildinglist');
 });
 
+Route::get('/floors', function()
+{
+	return View::make('home');
+});
 Route::get('howitworks', function()
 {
 	return View::make('howitworks');
