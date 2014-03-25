@@ -1,3 +1,4 @@
+
 <?php
 function connectToDB(){
 // Create connection to spacefinder database
