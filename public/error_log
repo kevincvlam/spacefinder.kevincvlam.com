@@ -32,3 +32,21 @@
 [04-Mar-2014 18:26:58 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home7/kevincvl/public_html/spacefinder/app/storage/views/ba6c2ab7e6c8f3f3220c451523276d7a on line 21
 [04-Mar-2014 19:25:01 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ',' or ';' in /home7/kevincvl/public_html/spacefinder/app/storage/views/ba6c2ab7e6c8f3f3220c451523276d7a on line 31
 [04-Mar-2014 20:48:42 UTC] PHP Parse error:  syntax error, unexpected 'for' (T_FOR) in /home7/kevincvl/public_html/spacefinder/app/storage/views/31bf540faece5de485e11181a0c0fa00 on line 12
+[18-Mar-2014 06:21:55 UTC] PHP Parse error:  syntax error, unexpected ')' in /home7/kevincvl/public_html/spacefinder/app/routes.php on line 42
+[18-Mar-2014 06:23:50 UTC] PHP Parse error:  syntax error, unexpected ')' in /home7/kevincvl/public_html/spacefinder/app/routes.php on line 42
+[18-Mar-2014 06:24:00 UTC] PHP Parse error:  syntax error, unexpected ')' in /home7/kevincvl/public_html/spacefinder/app/routes.php on line 42
+[24-Mar-2014 18:28:53 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';' in /home7/kevincvl/public_html/spacefinder/app/storage/views/d84e949fb9484921deeffdfa2101db4c on line 57
+[24-Mar-2014 18:56:34 UTC] PHP Parse error:  syntax error, unexpected '<' in /home7/kevincvl/public_html/spacefinder/app/storage/views/a72155743efd4e00b557253b9d67a08f on line 64
+[24-Mar-2014 18:57:38 UTC] PHP Parse error:  syntax error, unexpected 'small' (T_STRING), expecting ',' or ';' in /home7/kevincvl/public_html/spacefinder/app/storage/views/a72155743efd4e00b557253b9d67a08f on line 67
+[24-Mar-2014 18:57:42 UTC] PHP Parse error:  syntax error, unexpected 'small' (T_STRING), expecting ',' or ';' in /home7/kevincvl/public_html/spacefinder/app/storage/views/a72155743efd4e00b557253b9d67a08f on line 67
+[25-Mar-2014 04:02:28 UTC] PHP Parse error:  syntax error, unexpected '<' in /home7/kevincvl/public_html/spacefinder/app/routes.php on line 45
+[25-Mar-2014 04:03:14 UTC] PHP Parse error:  syntax error, unexpected '<' in /home7/kevincvl/public_html/spacefinder/app/routes.php on line 45
+[25-Mar-2014 04:03:21 UTC] PHP Parse error:  syntax error, unexpected '<' in /home7/kevincvl/public_html/spacefinder/app/routes.php on line 45
+[25-Mar-2014 04:03:34 UTC] PHP Parse error:  syntax error, unexpected '<' in /home7/kevincvl/public_html/spacefinder/app/routes.php on line 45
+[25-Mar-2014 04:04:00 UTC] PHP Parse error:  syntax error, unexpected '<' in /home7/kevincvl/public_html/spacefinder/app/routes.php on line 45
+[25-Mar-2014 04:04:06 UTC] PHP Parse error:  syntax error, unexpected '<' in /home7/kevincvl/public_html/spacefinder/app/routes.php on line 45
+[25-Mar-2014 04:04:11 UTC] PHP Parse error:  syntax error, unexpected '<' in /home7/kevincvl/public_html/spacefinder/app/routes.php on line 45
+[25-Mar-2014 04:10:42 UTC] PHP Parse error:  syntax error, unexpected 'case' (T_CASE) in /home7/kevincvl/public_html/spacefinder/app/routes.php on line 98
+[25-Mar-2014 04:18:39 UTC] PHP Fatal error:  Call to undefined function businessIndex() in /home7/kevincvl/public_html/spacefinder/app/storage/views/7c5e6990773051703e30d9a8ab2b66b6 on line 7
+[25-Mar-2014 04:29:26 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php on line 353
+[25-Mar-2014 04:31:48 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php on line 353

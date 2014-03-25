@@ -1,5 +1,7 @@
 <?php
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -41,7 +43,7 @@ Route::get('mapdata/{floornum}', function($floornum)
 		case 10: return View::make('Robarts10thFloor');
 		case 11: return View::make('Robarts11thFloor');
 		case 12: return View::make('Robarts12thFloor');
-		case 13: return View::make('Robarts13thFloor');
+		case 13: return View::make('Robarts13thfloor');
 		case 14: return View::make('home');
 	}
 });
@@ -92,4 +94,5 @@ Route::get('connor', function()
 {
 	return View::make('connor');
 });
+
 
