@@ -198,5 +198,5 @@ function getFloorPrediction($building, $floor, $timeRange){
 		echo "Error: End Population is zero";
 		return 0;
 	}
-	
+}	
 ?>
