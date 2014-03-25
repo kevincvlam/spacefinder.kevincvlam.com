@@ -350,7 +350,7 @@ function busynessTable(){
 		
 		//submit query
 		$result = $con->query($query)
-		if ($result){ //if good result
+		if ($result != 0){ //if good result
 			$con->close;
 			return $result;
 		}
@@ -373,7 +373,7 @@ function busynessTable(){
 		
 		//submit query
 		$result = $con->query($query)
-		if ($result){ //if good result
+		if ($result != 0){ //if good result
 			$con->close;
 			return $result;
 		}
@@ -424,7 +424,7 @@ function busynessIndex(){
 				
 		//submit query
 		$result = $con->query($query)
-		if ($result){ //if good result
+		if ($result != 0){ //if good result
 			$con->close;
 			$row = $result->fetch_array();
 			$result->close();
@@ -447,7 +447,7 @@ function busynessIndex(){
 				
 		//submit query
 		$result = $con->query($query)
-		if ($result){ //if good result
+		if ($result != 0){ //if good result
 			$con->close;
 			$row = $result->fetch_array();
 			$result->close();
@@ -472,7 +472,7 @@ function busynessIndex(){
 				
 		//submit query
 		$result = $con->query($query)
-		if ($result){ //if good result
+		if ($result != 0){ //if good result
 			$con->close;
 			$row = $result->fetch_array();
 			$result->close();
