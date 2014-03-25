@@ -10,7 +10,6 @@
         // Create and populate the data table.
         <?php
             include '/home7/kevincvl/public_html/spacefinder/library/findBusyness.php';
-            include '/home7/kevincvl/public_html/spacefinder/library/prediction.php';
         $con = connectToDB();
         printGoogleChartData(72, 'Robarts Library', "$floornum", 0, $con); 
         ?>
@@ -56,7 +55,6 @@
             echo $word;
 			echo"</div>";
              
-            getFloorPrediction('Robarts Library', $floornum, 0);	  
        ?>
 
        <h3> Recent Wireless Activity </h3>
