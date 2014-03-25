@@ -56,7 +56,7 @@ function getFloorPrediction($building, $floor, $timeRange){
 	
 	switch ($slope){
 		case $slope > 0.5:
-		   $message = "get very busy";
+		   $message = "get much busier";
 		   break;
 		case $slope > 0.1 && $slope <=0.5 :
 		   $message = "get slightly busier";
@@ -68,7 +68,7 @@ function getFloorPrediction($building, $floor, $timeRange){
 		   $message = "get less busy";
 		   break;
 		case $slope < -0.5 :
-		   $message = "get close to empty";
+		   $message = "get much less busy";
 	}
 	
 	echo "Floor " . $floor . " is predicted to " . $message . " in the next " . $timeRange ." hours<br>";
