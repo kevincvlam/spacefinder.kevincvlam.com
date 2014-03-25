@@ -53,6 +53,7 @@
             echo $tag;
 			echo" radius'>";
             echo $word;
+            getFloorPrediction('Robarts Library', $floornum, 0);	  
 			echo"</div>";
              
        ?>
