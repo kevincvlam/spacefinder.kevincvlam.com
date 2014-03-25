@@ -88,3 +88,8 @@ Route::get('test2', function()
 	return View::make('test2');
 });
 
+Route::get('connor', function()
+{
+	return View::make('connor');
+});
+
