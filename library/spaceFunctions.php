@@ -349,7 +349,7 @@ function busynessTable(){
 		GROUP BY bfloor";
 		
 		//submit query
-		$result = $con->query($query)
+		$result = $con->query($query);
 		if ($result != 0){ //if good result
 			$con->close;
 			return $result;
@@ -372,7 +372,7 @@ function busynessTable(){
 		GROUP BY barea";
 		
 		//submit query
-		$result = $con->query($query)
+		$result = $con->query($query);
 		if ($result != 0){ //if good result
 			$con->close;
 			return $result;
@@ -423,7 +423,7 @@ function busynessIndex(){
 		$query = $query . $building;
 				
 		//submit query
-		$result = $con->query($query)
+		$result = $con->query($query);
 		if ($result != 0){ //if good result
 			$con->close;
 			$row = $result->fetch_array();
@@ -446,7 +446,7 @@ function busynessIndex(){
 		$query = $query . $floor;
 				
 		//submit query
-		$result = $con->query($query)
+		$result = $con->query($query);
 		if ($result != 0){ //if good result
 			$con->close;
 			$row = $result->fetch_array();
@@ -471,7 +471,7 @@ function busynessIndex(){
 		$query = $query . $area;
 				
 		//submit query
-		$result = $con->query($query)
+		$result = $con->query($query);
 		if ($result != 0){ //if good result
 			$con->close;
 			$row = $result->fetch_array();
