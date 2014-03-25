@@ -57,6 +57,10 @@ Route::get('floor/{floornum}', function($floornum)
 
 // Tests
 
+Route::get('testPrediction', function()
+{
+	return View::make('testPrediction');
+});
 
 Route::get('charttest', function()
 {
