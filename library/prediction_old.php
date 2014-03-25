@@ -1,3 +1,4 @@
+
 <?php
 function connectToDB(){
 // Create connection to spacefinder database
@@ -24,7 +25,7 @@ function getFloorPrediction($building, $floor, $timeRange){
 	}
 	if (!$timeRange) $timeRange = 3;
 	$endTime = 172 - $timeRange;
-	/*$query = "(SELECT SUM(activeconn) FROM populations WHERE timestamp = (SELECT MIN(timestamp) FROM populations 
+	$query = "(SELECT SUM(activeconn) FROM populations WHERE timestamp = (SELECT MIN(timestamp) FROM populations 
 	         WHERE timestamp >= NOW() - INTERVAL 172 HOUR AND timestamp <= NOW() - INTERVAL ". $endTime ." HOUR ) 
 			 AND apn IN (SELECT apn FROM buildings";
 	if($building) $query = $query . " WHERE bname = '" . $building;			//remember single quotes for sql query
@@ -33,16 +34,7 @@ function getFloorPrediction($building, $floor, $timeRange){
 	//echo $query." <br>";
 	$newQuery = str_replace('MIN', 'MAX', $query);
 	$query = $query . " UNION " . $newQuery;
-	echo $query." <br>";*/
-	
-	$query = "(SELECT SUM(activeconn) FROM populations WHERE timestamp IN (SELECT * FROM (((SELECT MIN(timestamp) FROM populations WHERE timestamp >= NOW() - INTERVAL 190 HOUR AND timestamp <= NOW() - INTERVAL 169 HOUR ))
-			UNION
-			((SELECT MAX(timestamp)  FROM populations WHERE timestamp >= NOW() - INTERVAL 190 HOUR AND timestamp <= NOW() - INTERVAL ". $endTime ." HOUR ))) AS timestamp)
-			 AND apn IN (SELECT apn FROM buildings";
-	if($building) $query = $query . " WHERE bname = '" . $building;			//remember single quotes for sql query
-	if($floor) $query = $query . "' AND bfloor = '" . $floor;
-	$query = $query . "') GROUP BY timestamp)";
-	//echo $query." <br>";
+	#echo $query." <br>";
 
 		
 	//call query
@@ -64,19 +56,19 @@ function getFloorPrediction($building, $floor, $timeRange){
 	
 	switch ($slope){
 		case $slope > 0.5:
-		   $message = "get much busier than now";
+		   $message = "get much busier";
 		   break;
 		case $slope > 0.1 && $slope <=0.5 :
-		   $message = "get slightly busier than now";
+		   $message = "get slightly busier";
 		   break;
 		case $slope >=-0.1 && $slope <=0.1 :
-		   $message = "be the same as now";
+		   $message = "be the same";
 		   break;
 		case $slope >= -0.5 && $slope <0.1 :
-		   $message = "get less busy than now";
+		   $message = "get less busy";
 		   break;
 		case $slope < -0.5 :
-		   $message = "get much emptier than now";
+		   $message = "get much less busy";
 	}
 	
 	echo "Floor " . $floor . " is predicted to " . $message . " in the next " . $timeRange ." hours<br>";
