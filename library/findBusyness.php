@@ -200,22 +200,22 @@ function getFloorPrediction($building, $floor, $timeRange){
 	}
 	switch ($slope){
 		case $slope > 0.5:
-		   $message = "get much busier than now";
+		   $message = "be Much Busier than now";
 		   break;
 		case $slope > 0.1 && $slope <=0.5 :
-		   $message = "get slightly busier than now";
+		   $message = "be Slightly Busier than now";
 		   break;
 		case $slope >=-0.1 && $slope <=0.1 :
-		   $message = "be the same as now";
+		   $message = "be The Same as now";
 		   break;
 		case $slope >= -0.5 && $slope <0.1 :
-		   $message = "get less busy than now";
+		   $message = "be Less Busy than now";
 		   break;
 		case $slope < -0.5 :
-		   $message = "get much emptier than now";
+		   $message = "be Much Emptier than now";
 	}
 	
-	echo " - predicted to " . $message . " in the next " . $timeRange ." hours<br>";
+	echo "This floor is predicted to " . $message . " "  . $timeRange ." Hours.<br>";
 	
 }	
 ?>
