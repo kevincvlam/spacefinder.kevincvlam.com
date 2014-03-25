@@ -3,7 +3,7 @@
 <br>
 <h2> Robarts Library Floor 1 : </h2>
 <?php
-include 'prediction.php';
+include '/home7/kevincvl/public_html/spacefinder/library/prediction.php';
 getFloorPrediction('Robarts Library', 1, 0);	  
 ?>
 <h2> Robarts Library Floor 2 : </h2>
