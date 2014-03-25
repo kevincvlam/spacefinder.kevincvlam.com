@@ -198,5 +198,24 @@ function getFloorPrediction($building, $floor, $timeRange){
 		echo "Error: End Population is zero";
 		return 0;
 	}
+	switch ($slope){
+		case $slope > 0.5:
+		   $message = "get much busier than now";
+		   break;
+		case $slope > 0.1 && $slope <=0.5 :
+		   $message = "get slightly busier than now";
+		   break;
+		case $slope >=-0.1 && $slope <=0.1 :
+		   $message = "be the same as now";
+		   break;
+		case $slope >= -0.5 && $slope <0.1 :
+		   $message = "get less busy than now";
+		   break;
+		case $slope < -0.5 :
+		   $message = "get much emptier than now";
+	}
+	
+	echo " - predicted to " . $message . " in the next " . $timeRange ." hours<br>";
+	
 }	
 ?>
