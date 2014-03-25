@@ -53,7 +53,7 @@
 	<map id="triangle" name ="triangle">
 		
 	
-		<area shape="poly" title="Quadrant1" href="#1" alt="Quadrant1" coords="347,330, 422,326, 465,401, 430,465, 340,465, 304,403, 347,300" data-maphilight='{<?php echoColour($q1);?>}'/>
+		<area shape="poly" title="Quadrant1" href="#1" alt="Quadrant1" coords="347,330, 422,326, 465,401, 430,465, 340,465, 304,403, 347,330" data-maphilight='{<?php echoColour($q1);?>}'/>
 		<area shape="poly" title="Quadrant2" href="#2" alt="Quadrant2" coords="523,208, 720,203, 645,318, 523,208" data-maphilight='{<?php echoColour($q2);?>}'/>
 		<area shape="poly" title="Quadrant3" href="#3" alt="Quadrant3" coords="284,604, 484,609, 384,789, 284,604" data-maphilight='{<?php echoColour($q3);?>}'/>
 		<area shape="poly" title="Quadrant4" href="#4" alt="Quadrant4" coords="47,203, 232,207, 119,312, 47,203" data-maphilight='{<?php echoColour($q4);?>}'/>
