@@ -56,6 +56,7 @@
 			echo"</div>";
              
             getFloorPrediction('Robarts Library', $floornum, 0);	  
+            echo"<br>";
        ?>
 
        <h3> Recent Wireless Activity </h3>
