@@ -215,7 +215,7 @@ function getFloorPrediction($building, $floor, $timeRange){
 		   $message = "be Much Emptier than now";
 	}
 	
-	echo "This floor is predicted to " . $message . " "  . $timeRange ." Hours.<br>";
+	echo "This floor is predicted to " . $message . " in "  . $timeRange ." Hours.<br>";
 	
 }	
 ?>
