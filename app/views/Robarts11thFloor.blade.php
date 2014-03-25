@@ -54,7 +54,7 @@
 		
 	
 		<area shape="poly" title="Quadrant1" href="#1" alt="Quadrant1" coords="346,231, 431,231, 478,322, 439,387, 337,387, 300,316, 346,231" data-maphilight='{<?php echoColour($q1);?>}'/>
-		<area shape="poly" title="Quadrant2" href="#2" alt="Quadrant2" coords="592,95, 765,94, 686,238,5 92,95" data-maphilight='{<?php echoColour($q2);?>}'/>
+		<area shape="poly" title="Quadrant2" href="#2" alt="Quadrant2" coords="592,95, 765,94, 686,238, 592,95" data-maphilight='{<?php echoColour($q2);?>}'/>
 		<area shape="poly" title="Quadrant3" href="#3" alt="Quadrant3" coords="255,530, 522,530, 388,746, 255,530" data-maphilight='{<?php echoColour($q3);?>}'/>
 		<area shape="poly" title="Quadrant4" href="#4" alt="Quadrant4" coords="17,93, 213,93, 100,245, 17,93" data-maphilight='{<?php echoColour($q4);?>}'/>
 	</map>
