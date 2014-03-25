@@ -34,7 +34,7 @@ function getFloorPrediction($building, $floor, $timeRange){
 	//echo $query." <br>";
 	$newQuery = str_replace('MIN', 'MAX', $query);
 	$query = $query . " UNION " . $newQuery;
-	echo $query." <br>";
+	#echo $query." <br>";
 
 		
 	//call query
