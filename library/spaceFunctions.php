@@ -309,6 +309,8 @@ function printGoogleChartData($numEntries, $building, $floor, $area, $connect){
     return 0;
 } 
 
+///BELOW IS FUNCTIONS BEING TESTED
+
 
 //busynessTable Function
 //if input is only the building then return a mysqli object of the floor, floor business index, and timestamp
@@ -347,7 +349,8 @@ function busynessTable(){
 		GROUP BY bfloor";
 		
 		//submit query
-		if ($result = $con->query($query)){ //if good result
+		$result = $con->query($query);
+		if ($result != 0){ //if good result
 			$con->close;
 			return $result;
 		}
@@ -369,7 +372,8 @@ function busynessTable(){
 		GROUP BY barea";
 		
 		//submit query
-		if ($result = $con->query($query)){ //if good result
+		$result = $con->query($query);
+		if ($result != 0){ //if good result
 			$con->close;
 			return $result;
 		}
@@ -419,7 +423,8 @@ function busynessIndex(){
 		$query = $query . $building;
 				
 		//submit query
-		if ($result = $con->query($query)){ //if good result
+		$result = $con->query($query);
+		if ($result != 0){ //if good result
 			$con->close;
 			$row = $result->fetch_array();
 			$result->close();
@@ -441,7 +446,8 @@ function busynessIndex(){
 		$query = $query . $floor;
 				
 		//submit query
-		if ($result = $con->query($query)){ //if good result
+		$result = $con->query($query);
+		if ($result != 0){ //if good result
 			$con->close;
 			$row = $result->fetch_array();
 			$result->close();
@@ -465,7 +471,8 @@ function busynessIndex(){
 		$query = $query . $area;
 				
 		//submit query
-		if ($result = $con->query($query)){ //if good result
+		$result = $con->query($query);
+		if ($result != 0){ //if good result
 			$con->close;
 			$row = $result->fetch_array();
 			$result->close();

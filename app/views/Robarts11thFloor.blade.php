@@ -21,10 +21,10 @@
     // Run Some PHP To get busyness of each quadrant.
     include '/home7/kevincvl/public_html/spacefinder/library/findBusyness.php';
    
-   $q1 = findBusynessIndex("Robarts Library", "9", 1); 
-   $q2 = findBusynessIndex("Robarts Library", "9", 2); 
-   $q3 = findBusynessIndex("Robarts Library", "9", 3); 
-   $q4 = findBusynessIndex("Robarts Library", "9", 4);
+   $q1 = findBusynessIndex("Robarts Library", "11", 1); 
+   $q2 = findBusynessIndex("Robarts Library", "11", 2); 
+   $q3 = findBusynessIndex("Robarts Library", "11", 3); 
+   $q4 = findBusynessIndex("Robarts Library", "11", 4);
 
    function echoColour($index){
         if ($index > CROWDED_THRESHOLD){
@@ -49,14 +49,14 @@
    }
 ?>
 
-	<img id="library" src="<?php echo asset('static/Robarts11thFloor.png')?>" alt = "Robarts Floor Map"  usemap="#triangle">
+	<img id="library" src="<?php echo asset('static/Robarts11thFloor.png')?>" alt = "Robarts Floor Map" width="862" height ="857" usemap="#triangle">
 	<map id="triangle" name ="triangle">
 		
 	
-		<area shape="poly" title="Quadrant1" href="#1" alt="Quadrant1" coords="347,330, 422,326, 465,401, 430,465, 340,465, 304,403, 347,300" data-maphilight='{<?php echoColour($q1);?>}'/>
-		<area shape="poly" title="Quadrant2" href="#2" alt="Quadrant2" coords="523,208, 720,203, 645,318, 523,208" data-maphilight='{<?php echoColour($q2);?>}'/>
-		<area shape="poly" title="Quadrant3" href="#3" alt="Quadrant3" coords="284,604, 484,609, 384,789, 284,604" data-maphilight='{<?php echoColour($q3);?>}'/>
-		<area shape="poly" title="Quadrant4" href="#4" alt="Quadrant4" coords="47,203, 232,207, 119,312, 47,203" data-maphilight='{<?php echoColour($q4);?>}'/>
+		<area shape="poly" title="Quadrant1" href="#1" alt="Quadrant1" coords="346,231, 431,231, 478,322, 439,387, 337,387, 300,316, 346,231" data-maphilight='{<?php echoColour($q1);?>}'/>
+		<area shape="poly" title="Quadrant2" href="#2" alt="Quadrant2" coords="592,95, 765,94, 686,238, 592,95" data-maphilight='{<?php echoColour($q2);?>}'/>
+		<area shape="poly" title="Quadrant3" href="#3" alt="Quadrant3" coords="255,530, 522,530, 388,746, 255,530" data-maphilight='{<?php echoColour($q3);?>}'/>
+		<area shape="poly" title="Quadrant4" href="#4" alt="Quadrant4" coords="17,93, 213,93, 100,245, 17,93" data-maphilight='{<?php echoColour($q4);?>}'/>
 	</map>
 
 </body>
