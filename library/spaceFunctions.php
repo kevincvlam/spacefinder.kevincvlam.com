@@ -340,18 +340,17 @@ function busynessTable(){
 	ON b.apn = currentPop.apn
 
 	) AS tablet
-	WHERE bname = ";
+	WHERE bname = '";
 	if (func_num_args() == 1){
 		//call sql query for a building ie return floor array
 		$building = func_get_arg();
 		//build query
-		$query = $query . $building;
+		$query = $query . $building . "'";
 		$query = $query . "
 		GROUP BY bfloor";
 		
 		//submit query
-		$result = $con->query($query);
-		if ($result != 0){ //if good result
+		if ($result = $con->query($query)){ //if good result
 			$con->close;
 			return $result;
 		}
@@ -366,15 +365,14 @@ function busynessTable(){
 		$building = func_get_arg(0);
 		$floor = func_get_arg(1);
 		//build query
-		$query = $query . $building;
+		$query = $query . $building . "'";
 		$query = $query . "WHERE bfloor =  ";
 		$query = $query . $floor;
 		$query = $query . "
 		GROUP BY barea";
 		
 		//submit query
-		$result = $con->query($query);
-		if ($result != 0){ //if good result
+		if ($result = $con->query($query)){ //if good result
 			$con->close;
 			return $result;
 		}
@@ -425,8 +423,7 @@ function busynessIndex(){
 		$query = $query . $building . "'";
 				
 		//submit query
-		$result = $con->query($query);
-		if ($result != 0){ //if good result
+		if ($result = $con->query($query)){ //if good result
 			$con->close;
 			$row = $result->fetch_array();
 			$result->close();
@@ -448,8 +445,7 @@ function busynessIndex(){
 		$query = $query . $floor;
 				
 		//submit query
-		$result = $con->query($query);
-		if ($result != 0){ //if good result
+		if ($result = $con->query($query)){ //if good result
 			$con->close;
 			$row = $result->fetch_array();
 			$result->close();
@@ -473,8 +469,8 @@ function busynessIndex(){
 		$query = $query . $area;
 				
 		//submit query
-		$result = $con->query($query);
-		if ($result != 0){ //if good result
+		
+		if ($result = $con->query($query)){ //if good result
 			$con->close;
 			$row = $result->fetch_array();
 			$result->close();
