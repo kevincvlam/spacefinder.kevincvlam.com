@@ -417,12 +417,12 @@ function busynessIndex(){
 		ON b.apn = currentPop.apn
 
 		) AS tablet
-		WHERE bname = ";
+		WHERE bname = '";
 			
 	if (func_num_args() == 1){
 		$building = func_get_arg(0);
 		//build query
-		$query = $query . $building;
+		$query = $query . $building . "'";
 				
 		//submit query
 		$result = $con->query($query);
@@ -443,7 +443,7 @@ function busynessIndex(){
 		$floor = func_get_arg(1);
 		//build query
 		
-		$query = $query . $building;
+		$query = $query . $building . "'";
 		$query = $query . " AND bfloor = ";
 		$query = $query . $floor;
 				
@@ -466,7 +466,7 @@ function busynessIndex(){
 		$floor = func_get_arg(1);
 		$area = func_get_arg(2);
 		//build query
-		$query = $query . $building;
+		$query = $query . $building. "'";
 		$query = $query . " AND bfloor = ";
 		$query = $query . $floor;
 		$query = $query . " AND barea = ";
