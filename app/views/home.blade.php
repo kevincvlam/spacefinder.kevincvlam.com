@@ -86,10 +86,10 @@ for ($i = 1; $i <= 14; $i++) {
 					// Insert Tag Here
                     echo $tag;
 	//				findBusynessTag('Robarts Library', $i, 0);
-					echo" radius'>";
+					echo" radius'><h3>";
                     echo $word;
 				//findBusyness('Robarts Library', $i, 0);	 
-			echo"</div>
+			echo"</h3></div>
 			
 					</h5>
 				</div>
