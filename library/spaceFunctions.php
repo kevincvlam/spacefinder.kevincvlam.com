@@ -309,6 +309,28 @@ function printGoogleChartData($numEntries, $building, $floor, $area, $connect){
     return 0;
 } 
 
+function echoColour($index){
+        if ($index > CROWDED_THRESHOLD){
+           echo "\"fillColor\":\"ff0000\", \"alwaysOn\":\"true\", \"fillOpacity\":\"0.5\"";
+               return 0;
+        }elseif ($index > BUSY_THRESHOLD
+        && $index <= CROWDED_THRESHOLD){
+           echo "\"fillColor\":\"ff0000\", \"alwaysOn\":\"true\", \"fillOpacity\":\"0.5\"";
+               return 0;
+        }elseif ($index > HASSPACE_THRESHOLD
+        && $index <=  BUSY_THRESHOLD){
+           echo "\"fillColor\":\"FF6103\", \"alwaysOn\":\"true\", \"fillOpacity\":\"0.7\"";
+               return 0;
+        }elseif ($index > EMPTY_THRESHOLD 
+        && $index <= HASSPACE_THRESHOLD){
+           echo "\"fillColor\":\"5DFC0A\", \"alwaysOn\":\"true\", \"fillOpacity\":\"0.7\"";
+               return 0;
+        }else{
+           echo "\"fillColor\":\"1874CD\", \"alwaysOn\":\"true\", \"fillOpacity\":\"0.7\"";
+            return 0;
+        }
+   }
+
 ///BELOW IS FUNCTIONS BEING TESTED
 
 
@@ -325,33 +347,33 @@ function busynessTable(){
 	}
 	//build query base
 	$query = "
-		SELECT bname, bfloor, (SUM( activeconn ) - SUM( bminpop )) / ( SUM( bmaxpop ) - SUM( bminpop ) ) 
-		FROM (
-		(
+	SELECT (SUM( conn ) - SUM( min )) / ( SUM( max ) - SUM( min ) )
+	FROM (
 
-		SELECT populations.apn, populations.activeconn, populations.timestamp 
-		FROM populations JOIN (
-		SELECT apn, MAX(timestamp) AS mostRecentTime
-		FROM populations
-		GROUP BY apn
-		) AS time ON populations.timestamp = time.mostRecentTime AND populations.apn = time.apn
+	SELECT currentPop.activeconn AS conn, b.bminpop AS min, b.bmaxpop AS max, bfloor, barea, bname
+	FROM 
+	(SELECT * FROM buildings)b
+	INNER JOIN 
+		(SELECT apn, activeconn
+		FROM populations AS p
+		WHERE p.timestamp > NOW( ) - INTERVAL 5 
+		MINUTE + INTERVAL 2 HOUR
+		)currentPop
+	ON b.apn = currentPop.apn
 
-		) AS currentData
-		INNER JOIN buildings ON currentData.apn = buildings.apn
-		)
-		WHERE bname =  ";
+	) AS tablet
+	WHERE bname = '";
 	if (func_num_args() == 1){
 		//call sql query for a building ie return floor array
 		$building = func_get_arg();
 		//build query
-		$query = $query . $building;
+		$query = $query . $building . "'";
 		$query = $query . "
 		GROUP BY bfloor";
 		
 		//submit query
-		$result = $con->query($query);
-		if ($result != 0){ //if good result
-			$con->close;
+		if ($result = $con->query($query)){ //if good result
+			$con->close();
 			return $result;
 		}
 		
@@ -365,16 +387,15 @@ function busynessTable(){
 		$building = func_get_arg(0);
 		$floor = func_get_arg(1);
 		//build query
-		$query = $query . $building;
+		$query = $query . $building . "'";
 		$query = $query . "WHERE bfloor =  ";
 		$query = $query . $floor;
 		$query = $query . "
 		GROUP BY barea";
 		
 		//submit query
-		$result = $con->query($query);
-		if ($result != 0){ //if good result
-			$con->close;
+		if ($result = $con->query($query)){ //if good result
+			$con->close();
 			return $result;
 		}
 		
@@ -401,34 +422,34 @@ function busynessIndex(){
 	
 	//build query base
 	$query = "
-		SELECT bname, bfloor, (SUM( activeconn ) - SUM( bminpop )) / ( SUM( bmaxpop ) - SUM( bminpop ) ) 
+		SELECT (SUM( conn ) - SUM( min )) / ( SUM( max ) - SUM( min ) )
 		FROM (
-		(
 
-		SELECT populations.apn, populations.activeconn, populations.timestamp 
-		FROM populations JOIN (
-		SELECT apn, MAX(timestamp) AS mostRecentTime
-		FROM populations
-		GROUP BY apn
-		) AS time ON populations.timestamp = time.mostRecentTime AND populations.apn = time.apn
+		SELECT currentPop.activeconn AS conn, b.bminpop AS min, b.bmaxpop AS max, bfloor, barea, bname
+		FROM 
+		(SELECT * FROM buildings)b
+		INNER JOIN 
+			(SELECT apn, activeconn
+			FROM populations AS p
+			WHERE p.timestamp > NOW( ) - INTERVAL 5 
+			MINUTE + INTERVAL 2 HOUR
+			)currentPop
+		ON b.apn = currentPop.apn
 
-		) AS currentData
-		INNER JOIN buildings ON currentData.apn = buildings.apn
-		)
-		WHERE bname =  ";
-		
+		) AS tablet
+		WHERE bname = '";
+			
 	if (func_num_args() == 1){
 		$building = func_get_arg(0);
 		//build query
-		$query = $query . $building;
+		$query = $query . $building . "'";
 				
 		//submit query
-		$result = $con->query($query);
-		if ($result != 0){ //if good result
-			$con->close;
+		if ($result = $con->query($query)){ //if good result
+			$con->close();
 			$row = $result->fetch_array();
 			$result->close();
-			return $row[2];
+			return $row[0];
 		}
 		//query error
 		echo "query error in busynessIndex function <br>";
@@ -441,17 +462,16 @@ function busynessIndex(){
 		$floor = func_get_arg(1);
 		//build query
 		
-		$query = $query . $building;
+		$query = $query . $building . "'";
 		$query = $query . " AND bfloor = ";
 		$query = $query . $floor;
 				
 		//submit query
-		$result = $con->query($query);
-		if ($result != 0){ //if good result
-			$con->close;
+		if ($result = $con->query($query)){ //if good result
+			$con->close();
 			$row = $result->fetch_array();
 			$result->close();
-			return $row[2];
+			return $row[0];
 		}
 		//query error
 		echo "query error in busynessIndex function <br>";
@@ -464,19 +484,19 @@ function busynessIndex(){
 		$floor = func_get_arg(1);
 		$area = func_get_arg(2);
 		//build query
-		$query = $query . $building;
+		$query = $query . $building. "'";
 		$query = $query . " AND bfloor = ";
 		$query = $query . $floor;
 		$query = $query . " AND barea = ";
 		$query = $query . $area;
 				
 		//submit query
-		$result = $con->query($query);
-		if ($result != 0){ //if good result
-			$con->close;
+		
+		if ($result = $con->query($query)){ //if good result
+			$con->close();
 			$row = $result->fetch_array();
 			$result->close();
-			return $row[2];
+			return $row[0];
 		}
 		//query error
 		echo "query error in busynessIndex function <br>";

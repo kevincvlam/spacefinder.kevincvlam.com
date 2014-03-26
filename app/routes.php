@@ -62,6 +62,11 @@ Route::get('testPrediction', function()
 	return View::make('testPrediction');
 });
 
+Route::get('hometest', function()
+{
+	return View::make('hometest');
+});
+
 Route::get('charttest', function()
 {
 	return View::make('charttest');
