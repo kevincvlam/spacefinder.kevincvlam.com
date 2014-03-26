@@ -325,21 +325,22 @@ function busynessTable(){
 	}
 	//build query base
 	$query = "
-		SELECT bname, bfloor, (SUM( activeconn ) - SUM( bminpop )) / ( SUM( bmaxpop ) - SUM( bminpop ) ) 
-		FROM (
-		(
+	SELECT (SUM( conn ) - SUM( min )) / ( SUM( max ) - SUM( min ) )
+	FROM (
 
-		SELECT populations.apn, populations.activeconn, populations.timestamp 
-		FROM populations JOIN (
-		SELECT apn, MAX(timestamp) AS mostRecentTime
-		FROM populations
-		GROUP BY apn
-		) AS time ON populations.timestamp = time.mostRecentTime AND populations.apn = time.apn
+	SELECT currentPop.activeconn AS conn, b.bminpop AS min, b.bmaxpop AS max, bfloor, barea, bname
+	FROM 
+	(SELECT * FROM buildings)b
+	INNER JOIN 
+		(SELECT apn, activeconn
+		FROM populations AS p
+		WHERE p.timestamp > NOW( ) - INTERVAL 5 
+		MINUTE + INTERVAL 2 HOUR
+		)currentPop
+	ON b.apn = currentPop.apn
 
-		) AS currentData
-		INNER JOIN buildings ON currentData.apn = buildings.apn
-		)
-		WHERE bname =  ";
+	) AS tablet
+	WHERE bname = ";
 	if (func_num_args() == 1){
 		//call sql query for a building ie return floor array
 		$building = func_get_arg();
@@ -401,22 +402,23 @@ function busynessIndex(){
 	
 	//build query base
 	$query = "
-		SELECT bname, bfloor, (SUM( activeconn ) - SUM( bminpop )) / ( SUM( bmaxpop ) - SUM( bminpop ) ) 
+		SELECT (SUM( conn ) - SUM( min )) / ( SUM( max ) - SUM( min ) )
 		FROM (
-		(
 
-		SELECT populations.apn, populations.activeconn, populations.timestamp 
-		FROM populations JOIN (
-		SELECT apn, MAX(timestamp) AS mostRecentTime
-		FROM populations
-		GROUP BY apn
-		) AS time ON populations.timestamp = time.mostRecentTime AND populations.apn = time.apn
+		SELECT currentPop.activeconn AS conn, b.bminpop AS min, b.bmaxpop AS max, bfloor, barea, bname
+		FROM 
+		(SELECT * FROM buildings)b
+		INNER JOIN 
+			(SELECT apn, activeconn
+			FROM populations AS p
+			WHERE p.timestamp > NOW( ) - INTERVAL 5 
+			MINUTE + INTERVAL 2 HOUR
+			)currentPop
+		ON b.apn = currentPop.apn
 
-		) AS currentData
-		INNER JOIN buildings ON currentData.apn = buildings.apn
-		)
-		WHERE bname =  ";
-		
+		) AS tablet
+		WHERE bname = ";
+			
 	if (func_num_args() == 1){
 		$building = func_get_arg(0);
 		//build query
