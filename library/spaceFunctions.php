@@ -427,7 +427,7 @@ function busynessIndex(){
 			$con->close();
 			$row = $result->fetch_array();
 			$result->close();
-			return $row[2];
+			return $row[0];
 		}
 		//query error
 		echo "query error in busynessIndex function <br>";
@@ -449,7 +449,7 @@ function busynessIndex(){
 			$con->close();
 			$row = $result->fetch_array();
 			$result->close();
-			return $row[2];
+			return $row[0];
 		}
 		//query error
 		echo "query error in busynessIndex function <br>";
@@ -474,7 +474,7 @@ function busynessIndex(){
 			$con->close();
 			$row = $result->fetch_array();
 			$result->close();
-			return $row[2];
+			return $row[0];
 		}
 		//query error
 		echo "query error in busynessIndex function <br>";
