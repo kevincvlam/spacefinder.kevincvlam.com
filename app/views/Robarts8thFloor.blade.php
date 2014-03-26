@@ -21,29 +21,9 @@
     // Run Some PHP To get busyness of each quadrant.
     include '/home7/kevincvl/public_html/spacefinder/library/findBusyness.php';
    
-   $q1 = findBusynessIndex("Robarts Library", "8", 1); 
+   $q1 = busynessindex("Robarts Library", 8, 1); 
 
-   function echoColour($index){
-        if ($index > CROWDED_THRESHOLD){
-           echo "\"fillColor\":\"ff0000\", \"alwaysOn\":\"true\", \"fillOpacity\":\"0.5\"";
-               return 0;
-        }elseif ($index > BUSY_THRESHOLD
-        && $index <= CROWDED_THRESHOLD){
-           echo "\"fillColor\":\"ff0000\", \"alwaysOn\":\"true\", \"fillOpacity\":\"0.5\"";
-               return 0;
-        }elseif ($index > HASSPACE_THRESHOLD
-        && $index <=  BUSY_THRESHOLD){
-           echo "\"fillColor\":\"FF6103\", \"alwaysOn\":\"true\", \"fillOpacity\":\"0.7\"";
-               return 0;
-        }elseif ($index > EMPTY_THRESHOLD 
-        && $index <= HASSPACE_THRESHOLD){
-           echo "\"fillColor\":\"5DFC0A\", \"alwaysOn\":\"true\", \"fillOpacity\":\"0.7\"";
-               return 0;
-        }else{
-           echo "\"fillColor\":\"1874CD\", \"alwaysOn\":\"true\", \"fillOpacity\":\"0.7\"";
-            return 0;
-        }
-   }
+   
 ?>
 
 	<img id="library" src="<?php echo asset('static/Robarts8thFloor.png')?>" alt = "Robarts Floor Map" width="850" height ="818" usemap="#triangle">
