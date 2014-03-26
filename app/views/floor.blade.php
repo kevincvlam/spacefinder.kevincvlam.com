@@ -51,9 +51,9 @@
 			echo "<div data-alert class='alert-box "; 
 			// Insert Tag Here
             echo $tag;
-			echo" radius'>";
+			echo" radius'><h3>";
             echo $word;
-			echo"</div>";
+			echo"</h3></div>";
              
             getFloorPrediction('Robarts Library', $floornum, 0);	  
             echo"<br>";
