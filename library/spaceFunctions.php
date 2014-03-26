@@ -309,6 +309,28 @@ function printGoogleChartData($numEntries, $building, $floor, $area, $connect){
     return 0;
 } 
 
+function echoColour($index){
+        if ($index > CROWDED_THRESHOLD){
+           echo "\"fillColor\":\"ff0000\", \"alwaysOn\":\"true\", \"fillOpacity\":\"0.5\"";
+               return 0;
+        }elseif ($index > BUSY_THRESHOLD
+        && $index <= CROWDED_THRESHOLD){
+           echo "\"fillColor\":\"ff0000\", \"alwaysOn\":\"true\", \"fillOpacity\":\"0.5\"";
+               return 0;
+        }elseif ($index > HASSPACE_THRESHOLD
+        && $index <=  BUSY_THRESHOLD){
+           echo "\"fillColor\":\"FF6103\", \"alwaysOn\":\"true\", \"fillOpacity\":\"0.7\"";
+               return 0;
+        }elseif ($index > EMPTY_THRESHOLD 
+        && $index <= HASSPACE_THRESHOLD){
+           echo "\"fillColor\":\"5DFC0A\", \"alwaysOn\":\"true\", \"fillOpacity\":\"0.7\"";
+               return 0;
+        }else{
+           echo "\"fillColor\":\"1874CD\", \"alwaysOn\":\"true\", \"fillOpacity\":\"0.7\"";
+            return 0;
+        }
+   }
+
 ///BELOW IS FUNCTIONS BEING TESTED
 
 
