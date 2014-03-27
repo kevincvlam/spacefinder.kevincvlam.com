@@ -6,20 +6,7 @@
 include '/home7/kevincvl/public_html/spacefinder/library/findBusyness.php';
 
 
-$busynessIndex = getBusyIndex(); 
-$row = $busynessIndex->fetch_array();
-$curIndex = 100*$row[2];
-
-?>
-
-
-
-<?php
-$i = 0;
-    // Determine Words Here
-    $row = $busynessIndex->fetch_array();
-    $curIndex = 100*$row[2];
-//    echo $curIndex;
+$curIndex = busynessIndex('Robarts Library');
 
 
 	if ($curIndex > CROWDED_THRESHOLD){
@@ -42,7 +29,6 @@ $i = 0;
         $tag = "info";
 	}
     
-    if($i != 6 && $i !=7 && $i != 14){ //Skip these floors no study area
 	echo "        <div class='venue'>
         <div class='large-12 columns panel'>
         
@@ -74,10 +60,8 @@ $i = 0;
 					<div data-alert class='alert-box "; 
 					// Insert Tag Here
                     echo $tag;
-	//				findBusynessTag('Robarts Library', $i, 0);
 					echo" radius'>";
-                    echo $word;
-				//findBusyness('Robarts Library', $i, 0);	 
+                    echo $word;	 
 			echo"</div>
 			
 					</h5>
