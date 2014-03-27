@@ -155,7 +155,8 @@ function getBusyIndex(){
 
 }
 
-function getTimeSeries($numEntries, $building, $floor, $area, $connect){
+//returns a time series 2D array
+function getTimeSeries($hours, $building, $floor, $area, $connect){
 	//check for errors on connection
 	if($connect->errno != 0){
 		echo "Error with connection passed to function getPopulation";
@@ -168,11 +169,12 @@ function getTimeSeries($numEntries, $building, $floor, $area, $connect){
 	if($building) $query = $query . " WHERE bname = '" . $building;			//building info subquery
 	if($floor) $query = $query . "' AND bfloor = '" . $floor;				//building info subquery
 	if($area) $query = $query . "' AND barea = '" . $area;					//building info subquery
-	$query = $query . "')";													//building info subquery
+	$query = $query . "')													//building info subquery
+	WHERE populations.timestamp < (NOW()+INTERVAL 2 HOUR)
+	AND populations.timestamp > (NOW()-INTERVAL " . $hours . " HOUR + INTERVAL 2 HOUR)"
 	$query = $query . ") as relevantVals
-     GROUP BY timestamp
-     ORDER BY timestamp desc
-     LIMIT " . $numEntries;				
+	 GROUP BY timestamp							
+     ORDER BY timestamp desc";				
 	
 	//echo $query;   //display query for testing
 	
@@ -189,8 +191,8 @@ function getTimeSeries($numEntries, $building, $floor, $area, $connect){
 
 }
 
-function printGoogleChartData($numEntries, $building, $floor, $area, $connect){
-    $result = getTimeSeries($numEntries, $building, $floor, $area, $connect);
+function printGoogleChartData($hours, $building, $floor, $area, $connect){
+    $result = getTimeSeries($hours, $building, $floor, $area, $connect);
     echo "
     var data = google.visualization.arrayToDataTable([
     ['Time', 'Active Connections'],
