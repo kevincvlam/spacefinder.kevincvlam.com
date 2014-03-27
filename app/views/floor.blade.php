@@ -28,7 +28,8 @@
 @section('content')
     <h1> Robarts Building, Floor {{ $floornum }} </h1>
        <?php
-            $curIndex = findBusynessIndex("Robarts Library", $floornum, 0); 
+            $curIndex = 100*busynessIndex('Robarts Library', $floornum);
+           // $curIndex = findBusynessIndex("Robarts Library", $floornum, 0); 
             if ($curIndex > CROWDED_THRESHOLD){
                    $word = "Very Crowded";
                    $tag = "alert";
