@@ -12,6 +12,7 @@ define('CROWDED_THRESHOLD', '100');
 // $floor:		floor of the above building
 // $area:		area of the above floor
 include 'spaceFunctions.php';		//include
+/*
 function findBusyness ($building, $floor, $area){
 	
 	
@@ -65,7 +66,7 @@ function findBusyness ($building, $floor, $area){
 
 return 1;		//return 1 if the case statement did not work
 }
-
+*/
 function findBusynessTag ($building, $floor, $area){
 	
 	
