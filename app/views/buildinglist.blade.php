@@ -6,7 +6,7 @@
 include '/home7/kevincvl/public_html/spacefinder/library/findBusyness.php';
 
 
-$curIndex = busynessIndex('Robarts Library');
+$curIndex = 100*busynessIndex('Robarts Library');
 
 
 	if ($curIndex > CROWDED_THRESHOLD){
