@@ -309,6 +309,13 @@ function printGoogleChartData($numEntries, $building, $floor, $area, $connect){
     return 0;
 } 
 
+// Define a few constants that are reused
+define('EMPTY_THRESHOLD', '15');
+define('HASSPACE_THRESHOLD', '50');
+define('BUSY_THRESHOLD', '70');
+define('CROWDED_THRESHOLD', '100');
+
+//colour define function for maps
 function echoColour($index){
         if ($index > CROWDED_THRESHOLD){
            echo "\"fillColor\":\"ff0000\", \"alwaysOn\":\"true\", \"fillOpacity\":\"0.5\"";

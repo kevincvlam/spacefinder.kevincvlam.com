@@ -21,8 +21,8 @@
     // Run Some PHP To get busyness of each quadrant.
     include '/home7/kevincvl/public_html/spacefinder/library/findBusyness.php';
    
-   $q1 = busynessIndex("Robarts Library", 1, 1); 
-   $q2 = busynessIndex("Robarts Library", 1, 2); 
+   $q1 = busynessIndex('Robarts Library', 1, 1); 
+   $q2 = busynessIndex('Robarts Library', 1, 2); 
 
 ?>
 
