@@ -1,9 +1,5 @@
 <?php
-// Define a few constants that are reused
-define('EMPTY_THRESHOLD', '15');
-define('HASSPACE_THRESHOLD', '50');
-define('BUSY_THRESHOLD', '70');
-define('CROWDED_THRESHOLD', '100');
+
 
 
 //This function will be called by external html ie front end UI

@@ -24,10 +24,14 @@ include '/home7/kevincvl/public_html/spacefinder/library/findBusyness.php';
 </dl>
 
 <?php
+
+$result = busynessTable('Robarts Library');
+$row = $result->fetch_array();
 for ($i = 1; $i <= 14; $i++) {
 
     // Determine Words Here
-    $curIndex = 100*busynessIndex('Robarts Library', $i);
+    $row = $result->fetch_array();
+	$curIndex = 100*$row[0];
 //    echo $curIndex;
 
 
