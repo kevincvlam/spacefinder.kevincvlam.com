@@ -273,7 +273,7 @@ function busynessTable(){
 	WHERE bname = '";
 	if (func_num_args() == 1){
 		//call sql query for a building ie return floor array
-		$building = func_get_arg();
+		$building = func_get_arg(0);
 		//build query
 		$query = $query . $building . "'";
 		$query = $query . "
