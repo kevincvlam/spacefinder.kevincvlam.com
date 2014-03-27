@@ -36,12 +36,8 @@ $curIndex = busynessIndex('Robarts Library');
         	<div class='row'>
         		<div class='small-8 medium-8 large-8 columns'>";
         		
-    	if($i != 0){
-			echo "<h4>Robarts<br></h4>";
-		}
-		else{
-			echo '<h4>Robarts Library<br></h4>';
-		}
+ 			echo '<h4>Robarts Library<br></h4>';
+
 	
 		echo "	<p>
 							<a href=";echo asset("/floors");
