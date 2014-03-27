@@ -171,7 +171,7 @@ function getTimeSeries($hours, $building, $floor, $area, $connect){
 	if($area) $query = $query . "' AND barea = '" . $area;					//building info subquery
 	$query = $query . "')													//building info subquery
 	AND timestamp < (NOW()+INTERVAL 2 HOUR)
-	AND timestamp > (NOW()-INTERVAL " . $hours . " HOUR + INTERVAL 2 HOUR)";
+	AND timestamp > (NOW()-INTERVAL 4 HOUR + INTERVAL 2 HOUR)";
 	$query = $query . ") as relevantVals
 	 GROUP BY timestamp							
      ORDER BY timestamp desc";				
