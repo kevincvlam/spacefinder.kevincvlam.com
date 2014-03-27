@@ -8,6 +8,7 @@
 // $floor:		floor of the above building
 // $area:		area of the above floor
 include 'spaceFunctions.php';		//include
+
 function findBusynessIndex ($building, $floor, $area){
 	
 	if (!$building) echo "Error: No Building Indicated <br>";
