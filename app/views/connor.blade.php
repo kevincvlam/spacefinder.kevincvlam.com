@@ -10,6 +10,8 @@
 	echo "1st floor 1st area: " . busynessIndex('Robarts Library', 1, 1) . "<br>";
 	echo "2nd floor: " . busynessIndex('Robarts Library', 2) . "<br>";
 	echo "2nd floor 1st area: " . busynessIndex('Robarts Library', 2, 1) . "<br>";
+	$q = busynessIndex('Robarts Library', 2, 1)
+	echoColour($q);
 	
 
 ?>
