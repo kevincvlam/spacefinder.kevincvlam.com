@@ -47,105 +47,6 @@ echo "</table>";
 }
 
 
-//CONNOR
-
-//returns summed population from access points with a given building floor or area
-//expects first three values to be a string or null if not specified
-//$connect is expected to be a mysqli class (database connection)
-//returns an integer representing the population
-//does not close the connection passed to it
-
-function getPopulation($building, $floor, $area, $connect){
-	//check for errors on connection
-	if($connect->errno != 0){
-		echo "Error with connection passed to function getPopulation";
-		exit();
-	}
-	//construct query:
-	$query  = "SELECT SUM(activeconn) FROM	";						//summing query	
-	$query = $query . "(SELECT apn, activeconn, timestamp 
-    FROM
-    (SELECT apn, activeconn, timestamp FROM populations		
-	WHERE apn IN (SELECT apn FROM buildings";  								//building info subquery
-	if($building) $query = $query . " WHERE bname = '" . $building;			//building info subquery
-	if($floor) $query = $query . "' AND bfloor = '" . $floor;				//building info subquery
-	if($area) $query = $query . "' AND barea = '" . $area;					//building info subquery
-	$query = $query . "')";													//building info subquery
-	$query = $query . " ORDER BY timestamp desc
-    ) as relevantVals
-     GROUP BY apn) as vals";				
-	
-	//echo $query;   //display query for testing
-	
-	
-	//call query
-	if($result = $connect->query($query)){					//if successful result
-		$row = $result->fetch_array();							//return result
-		$result->close();
-		return (int) $row[0];
-	}
-	
-	echo "error in result from query...result was null <br>";					//result was null
-	return 0;
-
-}
-
-//returns summed maximum population from access points with a given building floor or area
-//expects first three values to be a string or null if not specified
-//$connect is expected to be a mysqli class (database connection)
-//returns an integer representing the Max population
-function getMaxPop($building, $floor, $area, $connect){
-	//check for errors on connection
-	if($connect->errno != 0){
-		echo "Error with connection passed to function getPopulation";
-		exit();
-	}
-	//construct query:
-	$query  = "SELECT SUM(bmaxpop) FROM buildings WHERE apn IN (SELECT apn FROM buildings";
-	if($building) $query = $query . " WHERE bname = '" . $building;			//remember single quotes for sql query
-	if($floor) $query = $query . "' AND bfloor = '" . $floor;
-	if($area) $query = $query . "' AND barea = '" . $area;
-	$query = $query . "')";
-		
-	//call query
-	if($result = $connect->query($query)){					//if successful result
-		$row = $result->fetch_array();							//return result
-		$result->close();
-		return (int) $row[0];
-	}
-	
-	echo "error in result from query...result was null <br>";					//result was null
-	return 0;
-}
-
-
-//returns summed minimum population from access points with a given building floor or area
-//expects first three values to be a string or null if not specified
-//$connect is expected to be a mysqli class (database connection)
-//returns an integer representing the Min population
-function getMinPop($building, $floor, $area, $connect){
-	//check for errors on connection
-	if($connect->errno != 0){
-		echo "Error with connection passed to function getPopulation";
-		exit();
-	}
-	//construct query:
-	$query  = "SELECT SUM(bminpop) FROM buildings WHERE apn IN (SELECT apn FROM buildings";
-	if($building) $query = $query . " WHERE bname = '" . $building;			//remember single quotes for sql query
-	if($floor) $query = $query . "' AND bfloor = '" . $floor;
-	if($area) $query = $query . "' AND barea = '" . $area;
-	$query = $query . "')";
-		
-	//call query
-	if($result = $connect->query($query)){					//if successful result
-		$row = $result->fetch_array();							//return result
-		$result->close();
-		return (int) $row[0];
-	}
-	
-	echo "error in result from query...result was null <br>";					//result was null
-	return 0;
-}
 
 //update.php
 //this is a php file that updates values in the populations table
@@ -317,19 +218,19 @@ define('CROWDED_THRESHOLD', '100');
 
 //colour define function for maps
 function echoColour($index){
-        if ($index > CROWDED_THRESHOLD){
+        if ($index > CROWDED_THRESHOLD/100){
            echo "\"fillColor\":\"ff0000\", \"alwaysOn\":\"true\", \"fillOpacity\":\"0.5\"";
                return 0;
-        }elseif ($index > BUSY_THRESHOLD
-        && $index <= CROWDED_THRESHOLD){
+        }elseif ($index > BUSY_THRESHOLD/100
+        && $index <= CROWDED_THRESHOLD/100){
            echo "\"fillColor\":\"ff0000\", \"alwaysOn\":\"true\", \"fillOpacity\":\"0.5\"";
                return 0;
-        }elseif ($index > HASSPACE_THRESHOLD
-        && $index <=  BUSY_THRESHOLD){
+        }elseif ($index > HASSPACE_THRESHOLD/100
+        && $index <=  BUSY_THRESHOLD/100){
            echo "\"fillColor\":\"FF6103\", \"alwaysOn\":\"true\", \"fillOpacity\":\"0.7\"";
                return 0;
-        }elseif ($index > EMPTY_THRESHOLD 
-        && $index <= HASSPACE_THRESHOLD){
+        }elseif ($index > EMPTY_THRESHOLD/100 
+        && $index <= HASSPACE_THRESHOLD/100){
            echo "\"fillColor\":\"5DFC0A\", \"alwaysOn\":\"true\", \"fillOpacity\":\"0.7\"";
                return 0;
         }else{
