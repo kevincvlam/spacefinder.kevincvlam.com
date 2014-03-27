@@ -75,7 +75,7 @@ $curIndex = busynessIndex('Robarts Library');
         </div>"; 
 
 
-        }
+     
 ?>
 
 
