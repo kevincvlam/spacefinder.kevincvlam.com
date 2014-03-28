@@ -166,13 +166,13 @@ function getTimeSeries($hours, $building, $floor, $area, $connect){
 	$query  = "SELECT SUM(activeconn), timestamp FROM	";						//summing query	
 	$query = $query . "(SELECT apn, activeconn, timestamp FROM populations		
 	WHERE apn IN (SELECT apn FROM buildings";  								//building info subquery
-	if($building) $query = $query . " WHERE bname = '" . $building;			//building info subquery
-	if($floor) $query = $query . "' AND bfloor = '" . $floor;				//building info subquery
-	if($area) $query = $query . "' AND barea = '" . $area;					//building info subquery
-	$query = $query . "')													//building info subquery
-	AND timestamp < (NOW()+INTERVAL 2 HOUR)
-	AND timestamp > (NOW()-INTERVAL 4 HOUR + INTERVAL 2 HOUR)";
-	$query = $query . ") as relevantVals
+	if($building) $query = $query . " WHERE bname = '" . $building . "'";			//building info subquery
+	if($floor) $query = $query . " AND bfloor = " . $floor;				//building info subquery
+	if($area) $query = $query . " AND barea = " . $area;					//building info subquery
+	$query = $query . ")													//building info subquery
+	AND timestamp < NOW()+INTERVAL 2 HOUR
+	AND timestamp > NOW()-INTERVAL " . $hours . " HOUR + INTERVAL 2 HOUR
+	) as relevantVals
 	 GROUP BY timestamp							
      ORDER BY timestamp desc";				
 	
