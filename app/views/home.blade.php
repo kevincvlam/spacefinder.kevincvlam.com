@@ -26,7 +26,7 @@ include '/home7/kevincvl/public_html/spacefinder/library/findBusyness.php';
 <?php
 
 $result = busynessTable('Robarts Library');
-//$row = $result->fetch_array();
+$row = $result->fetch_array();
 for ($i = 1; $i <= 14; $i++) {
 
     // Determine Words Here
