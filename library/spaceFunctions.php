@@ -242,7 +242,7 @@ function printGoogleChartData($hours, $building, $floor, $area, $connect){
     for($i =0; $i < $oldresult->num_rows - $result->num_rows; $i++){
         $oldrow = $oldresult->fetch_row();
         $oldrow[1] = substr($oldrow[1], 11);
-        echo "data.addRow(['$oldrow[1]', 0, $oldrow[0], null, null]);";
+        echo "data.addRow(['$oldrow[1]', null, $oldrow[0], null, null]);";
     }
     for($i = 0; $i < $result->num_rows; $i++){
         $row = $result->fetch_row();
