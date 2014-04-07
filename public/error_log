@@ -50,3 +50,49 @@
 [25-Mar-2014 04:18:39 UTC] PHP Fatal error:  Call to undefined function businessIndex() in /home7/kevincvl/public_html/spacefinder/app/storage/views/7c5e6990773051703e30d9a8ab2b66b6 on line 7
 [25-Mar-2014 04:29:26 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php on line 353
 [25-Mar-2014 04:31:48 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php on line 353
+[25-Mar-2014 20:13:07 UTC] PHP Fatal error:  Cannot redeclare connectToDB() (previously declared in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php:4) in /home7/kevincvl/public_html/spacefinder/library/prediction.php on line 14
+[25-Mar-2014 20:13:22 UTC] PHP Fatal error:  Cannot redeclare connectToDB() (previously declared in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php:4) in /home7/kevincvl/public_html/spacefinder/library/prediction.php on line 14
+[25-Mar-2014 20:13:52 UTC] PHP Fatal error:  Cannot redeclare connectToDB() (previously declared in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php:4) in /home7/kevincvl/public_html/spacefinder/library/prediction.php on line 14
+[25-Mar-2014 21:20:51 UTC] PHP Fatal error:  Call to undefined function getFloorPrediction() in /home7/kevincvl/public_html/spacefinder/app/storage/views/d84e949fb9484921deeffdfa2101db4c on line 55
+[25-Mar-2014 21:22:02 UTC] PHP Parse error:  syntax error, unexpected end of file in /home7/kevincvl/public_html/spacefinder/library/findBusyness.php on line 203
+[25-Mar-2014 21:22:06 UTC] PHP Parse error:  syntax error, unexpected end of file in /home7/kevincvl/public_html/spacefinder/library/findBusyness.php on line 203
+[27-Mar-2014 16:00:59 UTC] PHP Parse error:  syntax error, unexpected ')' in /home7/kevincvl/public_html/spacefinder/app/storage/views/989a9307e70b5726a0d211b7b990cada on line 24
+[27-Mar-2014 16:01:05 UTC] PHP Parse error:  syntax error, unexpected ')' in /home7/kevincvl/public_html/spacefinder/app/storage/views/989a9307e70b5726a0d211b7b990cada on line 24
+[27-Mar-2014 16:01:21 UTC] PHP Parse error:  syntax error, unexpected ')' in /home7/kevincvl/public_html/spacefinder/app/storage/views/989a9307e70b5726a0d211b7b990cada on line 24
+[27-Mar-2014 19:58:47 UTC] PHP Parse error:  syntax error, unexpected 'echoColour' (T_STRING) in /home7/kevincvl/public_html/spacefinder/app/storage/views/7c5e6990773051703e30d9a8ab2b66b6 on line 13
+[27-Mar-2014 20:25:39 UTC] PHP Fatal error:  Call to undefined function getPopulation() in /home7/kevincvl/public_html/spacefinder/library/findBusyness.php on line 129
+[27-Mar-2014 20:30:22 UTC] PHP Fatal error:  Call to undefined function getPopulation() in /home7/kevincvl/public_html/spacefinder/library/findBusyness.php on line 129
+[27-Mar-2014 20:31:46 UTC] PHP Fatal error:  Call to undefined function getPopulation() in /home7/kevincvl/public_html/spacefinder/library/findBusyness.php on line 129
+[27-Mar-2014 20:31:56 UTC] PHP Fatal error:  Call to undefined function getPopulation() in /home7/kevincvl/public_html/spacefinder/library/findBusyness.php on line 129
+[27-Mar-2014 20:35:47 UTC] PHP Fatal error:  Call to undefined function getPopulation() in /home7/kevincvl/public_html/spacefinder/library/findBusyness.php on line 129
+[27-Mar-2014 20:37:02 UTC] PHP Parse error:  syntax error, unexpected '}' in /home7/kevincvl/public_html/spacefinder/app/storage/views/a72155743efd4e00b557253b9d67a08f on line 77
+[27-Mar-2014 20:37:44 UTC] PHP Parse error:  syntax error, unexpected '}' in /home7/kevincvl/public_html/spacefinder/app/storage/views/a72155743efd4e00b557253b9d67a08f on line 77
+[27-Mar-2014 20:37:50 UTC] PHP Parse error:  syntax error, unexpected '}' in /home7/kevincvl/public_html/spacefinder/app/storage/views/a72155743efd4e00b557253b9d67a08f on line 77
+[27-Mar-2014 20:49:52 UTC] PHP Fatal error:  Call to undefined function getPopulation() in /home7/kevincvl/public_html/spacefinder/library/findBusyness.php on line 129
+[27-Mar-2014 20:50:54 UTC] PHP Fatal error:  Call to undefined function getPopulation() in /home7/kevincvl/public_html/spacefinder/library/findBusyness.php on line 129
+[27-Mar-2014 20:51:48 UTC] PHP Fatal error:  Call to undefined function getPopulation() in /home7/kevincvl/public_html/spacefinder/library/findBusyness.php on line 129
+[27-Mar-2014 21:14:42 UTC] PHP Fatal error:  Call to undefined function getPopulation() in /home7/kevincvl/public_html/spacefinder/library/findBusyness.php on line 129
+[27-Mar-2014 21:16:35 UTC] PHP Fatal error:  Call to undefined function getPopulation() in /home7/kevincvl/public_html/spacefinder/library/findBusyness.php on line 129
+[27-Mar-2014 21:16:37 UTC] PHP Fatal error:  Call to undefined function getPopulation() in /home7/kevincvl/public_html/spacefinder/library/findBusyness.php on line 129
+[27-Mar-2014 21:16:43 UTC] PHP Fatal error:  Call to undefined function getPopulation() in /home7/kevincvl/public_html/spacefinder/library/findBusyness.php on line 129
+[27-Mar-2014 21:18:23 UTC] PHP Fatal error:  Call to undefined function getPopulation() in /home7/kevincvl/public_html/spacefinder/library/findBusyness.php on line 22
+[27-Mar-2014 21:18:25 UTC] PHP Fatal error:  Call to undefined function getPopulation() in /home7/kevincvl/public_html/spacefinder/library/findBusyness.php on line 22
+[27-Mar-2014 21:18:30 UTC] PHP Fatal error:  Call to undefined function getPopulation() in /home7/kevincvl/public_html/spacefinder/library/findBusyness.php on line 22
+[27-Mar-2014 23:34:41 UTC] PHP Parse error:  syntax error, unexpected '$query' (T_VARIABLE) in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php on line 175
+[27-Mar-2014 23:36:24 UTC] PHP Fatal error:  Call to a member function close() on a non-object in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php on line 188
+[27-Mar-2014 23:36:31 UTC] PHP Fatal error:  Call to a member function close() on a non-object in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php on line 188
+[27-Mar-2014 23:38:15 UTC] PHP Fatal error:  Call to a member function close() on a non-object in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php on line 188
+[27-Mar-2014 23:39:32 UTC] PHP Fatal error:  Call to a member function close() on a non-object in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php on line 188
+[27-Mar-2014 23:39:37 UTC] PHP Fatal error:  Call to a member function close() on a non-object in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php on line 188
+[27-Mar-2014 23:39:41 UTC] PHP Fatal error:  Call to a member function close() on a non-object in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php on line 188
+[27-Mar-2014 23:50:26 UTC] PHP Fatal error:  Call to a member function close() on a non-object in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php on line 188
+[27-Mar-2014 23:50:35 UTC] PHP Fatal error:  Call to a member function close() on a non-object in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php on line 188
+[27-Mar-2014 23:57:04 UTC] PHP Fatal error:  Call to a member function close() on a non-object in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php on line 188
+[27-Mar-2014 23:57:06 UTC] PHP Fatal error:  Call to a member function close() on a non-object in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php on line 188
+[27-Mar-2014 23:57:11 UTC] PHP Fatal error:  Call to a member function close() on a non-object in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php on line 188
+[28-Mar-2014 00:05:01 UTC] PHP Fatal error:  Call to a member function close() on a non-object in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php on line 188
+[28-Mar-2014 16:30:50 UTC] PHP Fatal error:  Call to undefined function getPopulation() in /home7/kevincvl/public_html/spacefinder/app/storage/views/dbbe079a34365ee9663f1d23646985e9 on line 26
+[31-Mar-2014 21:13:22 UTC] PHP Fatal error:  Call to undefined function getPopulation() in /home7/kevincvl/public_html/spacefinder/app/storage/views/dbbe079a34365ee9663f1d23646985e9 on line 26
+[07-Apr-2014 18:05:45 UTC] PHP Parse error:  syntax error, unexpected '++' (T_INC), expecting ')' in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php on line 238
+[07-Apr-2014 18:05:51 UTC] PHP Parse error:  syntax error, unexpected '++' (T_INC), expecting ')' in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php on line 238
+[07-Apr-2014 18:05:57 UTC] PHP Parse error:  syntax error, unexpected '++' (T_INC), expecting ')' in /home7/kevincvl/public_html/spacefinder/library/spaceFunctions.php on line 238
