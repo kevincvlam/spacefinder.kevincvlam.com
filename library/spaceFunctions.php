@@ -232,29 +232,31 @@ function printGoogleChartData($hours, $building, $floor, $area, $connect){
     $result = getTimeSeries($hours, $building, $floor, $area, $connect);
     $oldresult = getTimeSeriesLastWeek($hours, $building, $floor, $area, $connect);
     echo "
-    var data = google.visualization.arrayToDataTable([
-    ['Time', 'Today', 'Last Week'],
+    var data = google.visualization.arrayToDataTable();
+    data.addColumn('string', 'Time');
+    data.addColumn('number', 'Today');
+    data.addColumn('number', 'LastWeek');
+    data.addColumn({type: 'string', role: 'annotation'});
+    data.addColumn({type: 'string', role: 'annotationText'});
     ";
     for($i =0; $i < $oldresult->num_rows - $result->num_rows; $i++){
         $oldrow = $oldresult->fetch_row();
         $oldrow[1] = substr($oldrow[1], 11);
-        echo "['$oldrow[1]', 0, $oldrow[0]],";
+        echo "data.addRow(['$oldrow[1]', null, $oldrow[0], null, null]);";
     }
     for($i = 0; $i < $result->num_rows; $i++){
         $row = $result->fetch_row();
         $oldrow = $oldresult->fetch_row();
         $row[1] = substr($row[1], 11);
         if($i == 0){
-                echo "['Current Time', $row[0], $oldrow[0]],";
+                echo "data.addRow(['$row[1]', $row[0], $oldrow[0], 'Current Time', 'Current Time']);";
             
         }
         elseif($i != $result->num_rows-1){
-                echo "['$row[1]', $row[0], $oldrow[0]],";
+                echo "data.addRow(['$row[1]', $row[0], $oldrow[0], null, null]);";
         }
         else{
-                echo "['$row[1]', $row[0], $oldrow[0]]
-                ]);
-                ";
+                echo "data.addRow(['$row[1]', $row[0], $oldrow[0], null, null]);";
         }
     }
     return 0;
