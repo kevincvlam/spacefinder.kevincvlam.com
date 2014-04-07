@@ -19,7 +19,8 @@
                         vAxis: {title: 'Active Connections'},
                         annotations: {style: 'line'},
 
-                        series: { 0: {color: '#000000'}}
+                        series: { 1: {color: 'gray'}},
+                        series: { 1: {lineDashStyle: [1,1]}}
 
                        }
                 );
