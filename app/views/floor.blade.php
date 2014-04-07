@@ -14,7 +14,7 @@
         printGoogleChartData(6, 'Robarts Library', "$floornum", 0, $con); 
         ?>
         // Create and draw the visualization.
-        new google.visualization.SteppedAreaChart(document.getElementById('visualization')).
+        new google.visualization.LineChart(document.getElementById('visualization')).
             draw(data, {hAxis: {direction: -1}
                        }
                 );
