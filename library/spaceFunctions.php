@@ -230,18 +230,25 @@ function getTimeSeriesLastWeek($hours, $building, $floor, $area, $connect){
 
 function printGoogleChartData($hours, $building, $floor, $area, $connect){
     $result = getTimeSeries($hours, $building, $floor, $area, $connect);
+    $oldresult = getTimeSeriesLastWeek($hours, $building, $floor, $area, $connect);
     echo "
     var data = google.visualization.arrayToDataTable([
-    ['Time', 'Active Connections'],
+    ['Time', 'Active Connections', 'Historical Trend'],
     ";
+    for($i =0; $i < $oldresult->num_rows - $result->num_rows; Si++){
+        $oldrow = $oldresult->fetch_row();
+        $oldrow[1] = substr($oldrow[1], 11);
+        echo "['$oldrow[1]', 0, $oldrow[0]],";
+    }
     for($i = 0; $i < $result->num_rows; $i++){
         $row = $result->fetch_row();
+        $oldrow = $oldresult->fetch_row();
         $row[1] = substr($row[1], 11);
         if($i != $result->num_rows-1){
-                echo "['$row[1]', $row[0]],";
+                echo "['$row[1]', $row[0], $oldrow[0]],";
         }
         else{
-                echo "['$row[1]', $row[0]]
+                echo "['$row[1]', $row[0], $oldrow[0]]
                 ]);
                 ";
         }
