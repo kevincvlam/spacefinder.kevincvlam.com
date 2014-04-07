@@ -235,7 +235,7 @@ function printGoogleChartData($hours, $building, $floor, $area, $connect){
     var data = google.visualization.arrayToDataTable([
     ['Time', 'Active Connections', 'Historical Trend'],
     ";
-    for($i =0; $i < $oldresult->num_rows - $result->num_rows; Si++){
+    for($i =0; $i < $oldresult->num_rows - $result->num_rows; $i++){
         $oldrow = $oldresult->fetch_row();
         $oldrow[1] = substr($oldrow[1], 11);
         echo "['$oldrow[1]', 0, $oldrow[0]],";
