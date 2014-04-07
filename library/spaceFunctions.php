@@ -235,28 +235,28 @@ function printGoogleChartData($hours, $building, $floor, $area, $connect){
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Time');
     data.addColumn('number', 'Today');
-    data.addColumn('number', 'LastWeek');
     data.addColumn({type: 'string', role: 'annotation'});
     data.addColumn({type: 'string', role: 'annotationText'});
+    data.addColumn('number', 'LastWeek');
     ";
     for($i =0; $i < $oldresult->num_rows - $result->num_rows; $i++){
         $oldrow = $oldresult->fetch_row();
         $oldrow[1] = substr($oldrow[1], 11);
-        echo "data.addRow(['$oldrow[1]', null, $oldrow[0], null, null]);";
+        echo "data.addRow(['$oldrow[1]', null, null, null,  $oldrow[0]]);";
     }
     for($i = 0; $i < $result->num_rows; $i++){
         $row = $result->fetch_row();
         $oldrow = $oldresult->fetch_row();
         $row[1] = substr($row[1], 11);
         if($i == 0){
-                echo "data.addRow(['$row[1]', $row[0], $oldrow[0], 'Current Time', 'Current Time']);";
+                echo "data.addRow(['$row[1]', $row[0], 'Current Time', 'Current Time', $oldrow[0]]);";
             
         }
         elseif($i != $result->num_rows-1){
-                echo "data.addRow(['$row[1]', $row[0], $oldrow[0], null, null]);";
+                echo "data.addRow(['$row[1]', $row[0], null, null, $oldrow[0]);";
         }
         else{
-                echo "data.addRow(['$row[1]', $row[0], $oldrow[0], null, null]);";
+                echo "data.addRow(['$row[1]', $row[0],null,null, $oldrow[0]]);";
         }
     }
     return 0;
