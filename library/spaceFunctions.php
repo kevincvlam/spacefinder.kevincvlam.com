@@ -253,7 +253,7 @@ function printGoogleChartData($hours, $building, $floor, $area, $connect){
             
         }
         elseif($i != $result->num_rows-1){
-                echo "data.addRow(['$row[1]', $row[0], null, null, $oldrow[0]);";
+                echo "data.addRow(['$row[1]', $row[0], null, null, $oldrow[0]]);";
         }
         else{
                 echo "data.addRow(['$row[1]', $row[0],null,null, $oldrow[0]]);";
