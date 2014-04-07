@@ -232,7 +232,7 @@ function printGoogleChartData($hours, $building, $floor, $area, $connect){
     $result = getTimeSeries($hours, $building, $floor, $area, $connect);
     $oldresult = getTimeSeriesLastWeek($hours, $building, $floor, $area, $connect);
     echo "
-    var data = google.visualization.arrayToDataTable();
+    var data = google.visualization.DataTable();
     data.addColumn('string', 'Time');
     data.addColumn('number', 'Today');
     data.addColumn('number', 'LastWeek');
