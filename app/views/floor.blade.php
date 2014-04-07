@@ -17,7 +17,10 @@
         new google.visualization.LineChart(document.getElementById('visualization')).
             draw(data, {hAxis: {direction: -1},
                         vAxis: {title: 'Active Connections'},
-                        annotations: {style: 'line'}
+                        annotations: {style: 'line'},
+
+                        series: { 0: {color: '#000000'}}
+
                        }
                 );
       }
