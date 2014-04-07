@@ -244,7 +244,11 @@ function printGoogleChartData($hours, $building, $floor, $area, $connect){
         $row = $result->fetch_row();
         $oldrow = $oldresult->fetch_row();
         $row[1] = substr($row[1], 11);
-        if($i != $result->num_rows-1){
+        if($i == 0){
+                echo "['Current Time', $row[0], $oldrow[0]],";
+            
+        }
+        elseif($i != $result->num_rows-1){
                 echo "['$row[1]', $row[0], $oldrow[0]],";
         }
         else{
