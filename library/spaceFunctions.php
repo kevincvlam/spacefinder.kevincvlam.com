@@ -237,7 +237,7 @@ function printGoogleChartData($hours, $building, $floor, $area, $connect){
     data.addColumn('number', 'Today');
     data.addColumn({type: 'string', role: 'annotation'});
     data.addColumn({type: 'string', role: 'annotationText'});
-    data.addColumn('number', 'LastWeek');
+    data.addColumn('number', 'Last Week');
     ";
     for($i =0; $i < $oldresult->num_rows - $result->num_rows; $i++){
         $oldrow = $oldresult->fetch_row();
