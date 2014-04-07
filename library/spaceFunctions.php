@@ -191,6 +191,43 @@ function getTimeSeries($hours, $building, $floor, $area, $connect){
 
 }
 
+
+//returns a time series 2D array, but one week into the past
+function getTimeSeriesLastWeek($hours, $building, $floor, $area, $connect){
+	//check for errors on connection
+	if($connect->errno != 0){
+		echo "Error with connection passed to function getPopulation";
+		exit();
+	}
+	//construct query:
+	$query  = "SELECT SUM(activeconn), timestamp FROM	";						//summing query	
+	$query = $query . "(SELECT apn, activeconn, timestamp FROM populations		
+	WHERE apn IN (SELECT apn FROM buildings";  								//building info subquery
+	if($building) $query = $query . " WHERE bname = '" . $building . "'";			//building info subquery
+	if($floor) $query = $query . " AND bfloor = " . $floor;				//building info subquery
+	if($area) $query = $query . " AND barea = " . $area;					//building info subquery
+	$query = $query . ")													
+	AND timestamp < NOW()+INTERVAL 5 HOUR - INTERVAL 1 WEEK
+	AND timestamp > NOW()-INTERVAL " . $hours . " HOUR + INTERVAL 2 HOUR - INTERVAL 1 WEEK
+	) as relevantVals
+	 GROUP BY timestamp							
+     ORDER BY timestamp desc";				
+	
+	//echo $query;   //display query for testing
+	
+	
+	//call query
+	if($result = $connect->query($query)){	
+		return $result;
+		$result->close();
+	}
+	
+    $result->close();
+	echo "error in result from query...result was null <br>";					//result was null
+	return 0;
+
+}
+
 function printGoogleChartData($hours, $building, $floor, $area, $connect){
     $result = getTimeSeries($hours, $building, $floor, $area, $connect);
     echo "
