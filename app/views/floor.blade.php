@@ -16,7 +16,8 @@
         // Create and draw the visualization.
         new google.visualization.LineChart(document.getElementById('visualization')).
             draw(data, {hAxis: {direction: -1},
-                        vAxis: {title: 'Active Connections'}
+                        vAxis: {title: 'Active Connections'},
+                        annotations: {style: 'line'}
                        }
                 );
       }
