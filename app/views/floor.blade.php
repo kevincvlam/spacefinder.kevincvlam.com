@@ -62,7 +62,7 @@
             echo $word;
 			echo"</div>";
              
-            getFloorPrediction('Robarts Library', $floornum, 0);	  
+            //getFloorPrediction('Robarts Library', $floornum, 0);	  
             echo"<br>";
        ?>
 
